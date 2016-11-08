@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 
 public class Fenetre extends JFrame {
 
-	public Fenetre() {
-		super("RobotWar");
+	public Fenetre(String titre) {
+		super(titre);
 		setSize(500, 500);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE); // permet de couper le
 													// programme quand on ferme
@@ -24,7 +24,7 @@ public class Fenetre extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		Fenetre maFenetre = new Fenetre();
+		Fenetre maFenetre = new Fenetre("RobotWar - Jeu");
 	}
 
 }
