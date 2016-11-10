@@ -2,10 +2,13 @@ package graphics;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
 public class Fenetre extends JFrame {
+
+	private ArrayList<PluginRobot> listRobots;
 
 	public Fenetre(String titre) {
 		super(titre);
@@ -16,11 +19,16 @@ public class Fenetre extends JFrame {
 		setVisible(true);
 	}
 
+	public void setListeRobots(ArrayList<PluginRobot> listRobots) {
+		this.listRobots = listRobots;
+	}
+
 	@Override
 	public void paint(Graphics g) {
-		g.setColor(Color.BLUE);
-		g.drawRect(0, 0, 50, 50); // Pour avoir juste les contours du rect
-		// g.fillRect(0, 0, 50, 50); // pour remplir le rectangle
+		for (PluginRobot robot : listRobots) {
+
+			robot.paint(g);
+		}
 	}
 
 	public static void main(String[] args) {
