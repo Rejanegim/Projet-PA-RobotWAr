@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
-public class Fenetre extends JFrame {
+public class Fenetre extends JFrame implements PluginRobot {
 
 	public Fenetre(String titre) {
 		super(titre);
@@ -20,7 +20,7 @@ public class Fenetre extends JFrame {
 	public void paint(Graphics g) {
 		g.setColor(Color.BLUE);
 		g.drawRect(0, 0, 50, 50); // Pour avoir juste les contours du rect
-		g.fillRect(0, 0, 50, 50); // pour remplir le rectangle
+		// g.fillRect(0, 0, 50, 50); // pour remplir le rectangle
 	}
 
 	public static void main(String[] args) {
