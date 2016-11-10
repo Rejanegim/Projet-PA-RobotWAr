@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
-public class Fenetre extends JFrame implements PluginRobot {
+public class Fenetre extends JFrame {
 
 	public Fenetre(String titre) {
 		super(titre);
