@@ -8,7 +8,7 @@ import m1.miage.projet.pa.Fenetre;
 import m1.miage.projet.pa.PluginRobot;
 
 
-public class DeplacementVertical {
+public class DeplacementVertical implements IPluginDeplacement {
 
 	private ArrayList<PluginRobot> listRobots;
 
