@@ -1,12 +1,11 @@
 package m1.miage.projet.pa;
 
-
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import m1.miage.projet.pa.Fenetre;
 import m1.miage.projet.pa.PluginRobot;
-
 
 public class DeplacementVertical implements IPluginDeplacement {
 
@@ -34,7 +33,7 @@ public class DeplacementVertical implements IPluginDeplacement {
 	}
 
 	private void gestionDesTours() {
-System.out.println("TOURS");
+		System.out.println("TOURS");
 		// 10 tours de jeu :
 		for (int i = 1; i <= 10; i++) {
 
@@ -49,10 +48,10 @@ System.out.println("TOURS");
 				int x = robot.getX();
 				int y = robot.getY();
 
-				robot.setY(y + 1);
-				
+				robot.setY(y + 10);
+
 				System.out.println("mouvement");
-				
+
 				fenetre.repaint();
 			}
 
@@ -62,7 +61,13 @@ System.out.println("TOURS");
 
 	public static void main(String[] args) {
 		DeplacementVertical mo = new DeplacementVertical(2);
-		
+
 	}
-	
+
+	@Override
+	public Point deplacement(Robot robot) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

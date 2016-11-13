@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 public class Fenetre extends JFrame {
 
-	private ArrayList<PluginRobot> listRobots;
+	private ArrayList<Robot> listRobots;
 
 	public Fenetre(String titre) {
 		super(titre);
@@ -19,13 +19,18 @@ public class Fenetre extends JFrame {
 		setVisible(true);
 	}
 
-	public void setListeRobots(ArrayList<PluginRobot> listRobots) {
+	public void setListeRobots(ArrayList<Robot> listRobots) {
 		this.listRobots = listRobots;
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		for (PluginRobot robot : listRobots) {
+		Color bg =new Color(255,255,255) ;
+		g.setColor(bg);
+		g.drawRect(0 , 0 , 510 , 510) ;
+		g.fillRect(0, 0, 510, 510);
+		
+		for (Robot robot : listRobots) {
 
 			robot.paint(g);
 		}

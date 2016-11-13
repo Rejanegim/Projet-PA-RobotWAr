@@ -3,12 +3,12 @@ package m1.miage.projet.pa;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import sun.applet.Main;
-
 public class Moteur {
 
-	private ArrayList<PluginRobot> listRobots;
+	/** Liste des robots */
+	private ArrayList<Robot> listRobots;
 
+	/** Fenetre du jeu */
 	private Fenetre fenetre;
 
 	public Moteur(int nbRobots) {
@@ -19,38 +19,40 @@ public class Moteur {
 
 		// Création des robots :
 		for (int i = 0; i < nbRobots; i++) {
-			PluginRobot r1 = new PluginRobot();
+			// Création d'un robot
+			Robot r1 = new Robot();
 
+			// Ajout du robot à la liste
 			listRobots.add(r1);
 		}
 
 		fenetre.setListeRobots(listRobots);
 
+		// Lancement du jeu
 		gestionDesTours();
 
 	}
 
 	private void gestionDesTours() {
-System.out.println("TOURS");
 		// 10 tours de jeu :
 		for (int i = 1; i <= 10; i++) {
 
-			for (PluginRobot robot : listRobots) {
+			// On parcourt la liste des robots
+			for (Robot robot : listRobots) {
+
+				// Timer entre chaque tour d'un robot
 				try {
 					TimeUnit.SECONDS.sleep(1);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
-				int x = robot.getX();
-				int y = robot.getY();
+				// On demande au robot de se déplacer
+				robot.deplacement();
 
-				robot.setX(x + 1);
-				//robot.setX(y + 1);
-				
-				System.out.println("mouvement");
-				
+				// On demande au robot d'attaquer
+				robot.attaque();
+
 				fenetre.repaint();
 			}
 
@@ -59,6 +61,6 @@ System.out.println("TOURS");
 	}
 
 	public static void main(String[] args) {
-		Moteur moteur = new Moteur(2);
+		Moteur moteur = new Moteur(4);
 	}
 }
