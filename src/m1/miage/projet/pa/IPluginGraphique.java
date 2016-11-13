@@ -1,4 +1,4 @@
-package graphics;
+package m1.miage.projet.pa;
 
 import java.awt.Graphics;
 

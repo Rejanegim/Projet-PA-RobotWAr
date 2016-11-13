@@ -12,11 +12,11 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 
 	private ArrayList<PluginRobot> listRobots;
 
-	private Fenetre fenetre;
+	private FenetreF fenetre;
 
 	public DeplacementHorizontal(int nbRobots) {
 
-		fenetre = new Fenetre();
+		fenetre = new FenetreF();
 
 		listRobots = new ArrayList();
 

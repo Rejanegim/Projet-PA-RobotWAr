@@ -3,8 +3,6 @@ package m1.miage.projet.pa;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import graphics.Fenetre;
-import graphics.PluginRobot;
 import sun.applet.Main;
 
 public class Moteur {
