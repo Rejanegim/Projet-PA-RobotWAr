@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.lang.Math;
 
-public class PluginRobot implements IPluginGraphique {
+public class PluginRobot  {
 
 	private static final long serialVersionUID = 1L;
 
@@ -42,7 +42,7 @@ public class PluginRobot implements IPluginGraphique {
 		this.y = y;
 	}
 
-	@Override
+	
 	public void paint(Graphics g) {
 		Color c = new Color(randomr, randomv, randomb);
 		g.setColor(c);
