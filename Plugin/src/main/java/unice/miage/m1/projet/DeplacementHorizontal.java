@@ -27,7 +27,6 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 		}
 
 		fenetre.setListeRobots(listRobots);
-
 		gestionDesTours();
 
 	}
@@ -35,9 +34,16 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 	private void gestionDesTours() {
 		System.out.println("TOURS");
 		// 10 tours de jeu :
-		for (int i = 1; i <= 10; i++) {
-
+		int tours = (int) Double.POSITIVE_INFINITY;
+		for (int i = 1; i <= tours; i++) {
 			for (PluginRobot robot : listRobots) {
+				int x = robot.getX();
+				int y = robot.getY();
+				
+				if (this.auBord(robot)){
+					x = robot.xMax-x ; 
+				}
+
 				try {
 					TimeUnit.SECONDS.sleep(1);
 				} catch (InterruptedException e) {
@@ -45,11 +51,8 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 					e.printStackTrace();
 				}
 
-				int x = robot.getX();
-				int y = robot.getY();
-
 				robot.setX(x + 10);
-
+			
 				System.out.println("mouvement");
 
 				fenetre.repaint();
@@ -58,6 +61,13 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 		}
 
 	}
+	
+	public boolean auBord(PluginRobot robot){
+        return (robot.getX()>robot.xMax-5 || 
+                robot.getX()<5      ||
+                robot.getY()>robot.yMax-5 ||
+                robot.getY()<10);
+    }
 
 	public static void main(String[] args) {
 		DeplacementHorizontal moteur = new DeplacementHorizontal(2);
