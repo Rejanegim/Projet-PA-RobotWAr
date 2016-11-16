@@ -1,5 +1,4 @@
-package m1.miage.projet.pa;
-
+package unice.miage.m1.projet;
 
 import java.io.File;
 import java.io.FileNotFoundException;
