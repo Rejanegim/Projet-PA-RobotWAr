@@ -15,7 +15,7 @@ public class FenetreF extends JFrame implements IPluginGraphique {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<PluginRobot> listRobots;
+	private ArrayList<IRobot> listRobots;
 
 	public	FenetreF() {
 		this.setTitle("RobotWar");
@@ -29,7 +29,7 @@ public class FenetreF extends JFrame implements IPluginGraphique {
 		Toolkit.getDefaultToolkit().setDynamicLayout(false);
 	}
 	
-	public void setListeRobots(ArrayList<PluginRobot> listRobots) {
+	public void setListeRobots(ArrayList<IRobot> listRobots) {
 		this.listRobots = listRobots;
 	}
 
@@ -39,7 +39,7 @@ public class FenetreF extends JFrame implements IPluginGraphique {
 		g.setColor(bg);
 		g.drawRect(0 , 0 , 510 , 510) ;
 		g.fillRect(0, 0, 510, 510);
-		for (PluginRobot robot : listRobots) {
+		for (IRobot robot : listRobots) {
 
 			robot.paint(g);
 		}

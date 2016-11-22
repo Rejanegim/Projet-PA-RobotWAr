@@ -1,28 +1,26 @@
 package unice.miage.m1.projet;
 
 import java.awt.Point;
+import java.awt.Robot;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-
-import unice.miage.m1.projet.Fenetre;
-import unice.miage.m1.projet.PluginRobot;
 
 public class DeplacementVertical implements IPluginDeplacement {
 
 	private ArrayList<PluginRobot> listRobots;
 
-	private FenetreF fenetre;
+//	private FenetreF fenetre;
 
 	public DeplacementVertical(int nbRobots) {
 
-		fenetre = new FenetreF();
+//		fenetre = new FenetreF();
 		listRobots = new ArrayList();
 		// Création des robots :
 		for (int i = 0; i < nbRobots; i++) {
 			PluginRobot r1 = new PluginRobot();
 			listRobots.add(r1);
 		}
-		fenetre.setListeRobots(listRobots);
+//		fenetre.setListeRobots(listRobots);
 		gestionDesTours();
 
 	}
@@ -47,7 +45,7 @@ public class DeplacementVertical implements IPluginDeplacement {
 				}
 				robot.setY(y + 10);
 				System.out.println("mouvement");
-				fenetre.repaint();
+//				fenetre.repaint();
 			}
 
 		}
@@ -67,10 +65,15 @@ public class DeplacementVertical implements IPluginDeplacement {
 	}
 
 	
-	public Point deplacement(Robot robot) {
+	public Point deplacement(IRobot robot) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+//
+//	public Point deplacement() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }
 

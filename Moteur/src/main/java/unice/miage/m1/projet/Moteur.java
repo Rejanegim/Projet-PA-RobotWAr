@@ -1,6 +1,8 @@
 package unice.miage.m1.projet;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Moteur {
@@ -11,7 +13,7 @@ public class Moteur {
 	/** Fenetre du jeu */
 	private Fenetre fenetre;
 
-	public Moteur(int nbRobots) {
+	public Moteur(int nbRobots, List<Class> l) {
 
 		fenetre = new Fenetre("TEST");
 
@@ -21,7 +23,16 @@ public class Moteur {
 		for (int i = 0; i < nbRobots; i++) {
 			// Création d'un robot
 			Robot r1 = new Robot();
-
+			// r1.setPluginDeplacement(pluginDeplacement);
+			for (int j = 0; j < l.size(); j++) {
+				if (l.get(j).getName().equals("unice.miage.m1.projet.DeplacementHorizontal")) {
+                      //get contstuctor
+					
+					//invoke
+					IPluginDeplacement truc = null;
+					r1.setPluginDeplacement(truc);
+				}
+			}
 			// Ajout du robot à la liste
 			listRobots.add(r1);
 		}
@@ -29,7 +40,6 @@ public class Moteur {
 		fenetre.setListeRobots(listRobots);
 
 		// Lancement du jeu
-		gestionDesTours();
 
 	}
 
@@ -60,7 +70,11 @@ public class Moteur {
 
 	}
 
-	public static void main(String[] args) {
-		Moteur moteur = new Moteur(4);
+	public static void main(String[] args) throws ClassNotFoundException {
+		File f = new File("/home/deptinfo/Documents/workspacePA/Projet-PA-RobotWAr/Plugin/target/classes");
+		Repository rep = new Repository(f);
+		List l = rep.load();
+		Moteur moteur = new Moteur(4, l);
+		moteur.gestionDesTours();
 	}
 }

@@ -8,27 +8,27 @@ import java.util.ArrayList;
 public class PluginRobots  implements IPluginGraphique {
 	
 	private ArrayList<PluginRobot> listRobots;
-	FenetreF fenetre; 
+	IFenetre fenetre; 
 	int nbrobot  ;
 	
 	public PluginRobots(int nbRobots) {
 
-		fenetre = new FenetreF();
+//		fenetre = new FenetreF();
 		listRobots = new ArrayList();
 		for (int i = 0; i < nbRobots; i++) {
 			PluginRobot r1 = new PluginRobot();
 
 			listRobots.add(r1);
 			}
-			fenetre.setListeRobots(listRobots);
+//			fenetre.setListeRobots(listRobots);
 		}
 
 	
-	public FenetreF getFenetre() {
+	public IFenetre getFenetre() {
 		return fenetre;
 	}
 
-	public void setFenetre(FenetreF fenetre) {
+	public void setFenetre(IFenetre fenetre) {
 		this.fenetre = fenetre;
 	}
 	
