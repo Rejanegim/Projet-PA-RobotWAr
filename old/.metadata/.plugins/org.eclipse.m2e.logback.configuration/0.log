@@ -1,0 +1,276 @@
+2016-11-22 13:03:15,897 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-11-22 13:05:33,207 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-11-22 13:06:27,507 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Interface:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Interface/pom.xml.
+2016-11-22 13:06:29,168 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:06:29,184 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Interface/src/main/resources
+2016-11-22 13:06:29,197 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:06:29,199 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Interface/src/test/resources
+2016-11-22 13:06:42,868 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Moteur:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/pom.xml.
+2016-11-22 13:06:43,046 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:06:43,048 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:06:43,054 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:06:43,071 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:07:17,888 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Plugin:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/pom.xml.
+2016-11-22 13:07:18,054 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:18,056 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:07:18,062 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:18,063 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:07:19,846 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:19,854 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:07:19,862 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:19,863 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:07:26,189 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:26,191 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Interface/src/main/resources
+2016-11-22 13:07:26,197 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:26,198 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Interface/src/test/resources
+2016-11-22 13:07:26,274 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:26,275 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:07:26,281 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:26,282 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:07:26,334 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:26,335 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:07:26,343 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:07:26,344 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:09:14,187 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:14,188 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:09:14,207 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:14,210 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:09:14,696 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:14,696 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:09:14,698 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:14,699 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:09:15,742 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:15,743 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:09:15,747 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:15,749 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:09:15,766 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:15,767 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:09:15,771 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:15,773 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:09:31,803 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:31,805 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:09:31,809 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:31,810 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:09:32,096 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:32,098 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:09:32,102 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:09:32,103 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:14:35,154 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Moteur:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/pom.xml.
+2016-11-22 13:14:35,200 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:14:35,201 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:14:35,216 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:14:35,216 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:14:36,930 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:14:36,943 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:14:36,948 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:14:36,949 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:16:59,986 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:16:59,987 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:16:59,997 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:16:59,998 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:17:01,119 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:17:01,120 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:17:01,125 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:17:01,127 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:17:18,037 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:17:18,039 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:17:18,043 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:17:18,044 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:20:17,189 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:20:17,191 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:20:17,212 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:20:17,223 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:20:17,246 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:20:17,255 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:20:17,268 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:20:17,269 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:20:48,319 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:20:48,321 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:20:48,324 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:20:48,326 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:21:31,191 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:21:31,192 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:21:31,203 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:21:31,205 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:21:31,243 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:21:31,245 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:21:31,252 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:21:31,254 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:21:51,480 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:21:51,481 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:21:51,485 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:21:51,487 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:22:08,355 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:22:08,356 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:22:08,372 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:22:08,373 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:24:11,859 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:24:11,860 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:24:11,864 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:24:11,865 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:30:02,933 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:30:02,935 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:30:02,938 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:30:02,951 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:31:38,116 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:31:38,118 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:31:38,121 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:31:38,122 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:34:14,827 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Plugin:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/pom.xml.
+2016-11-22 13:34:14,846 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Plugin:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:34:14,992 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Moteur:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/pom.xml.
+2016-11-22 13:34:15,113 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:15,114 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:34:15,118 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:15,119 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:34:15,373 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:15,374 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:34:15,379 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:15,380 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:34:34,498 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Plugin:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:34:34,785 [Worker-19] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Plugin:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/pom.xml.
+2016-11-22 13:34:34,821 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Plugin:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:34:34,912 [Worker-19] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Moteur:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/pom.xml.
+2016-11-22 13:34:35,012 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:35,013 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:34:35,017 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:35,018 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:34:35,062 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Moteur:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:34:35,077 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:35,078 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:34:35,082 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:35,083 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:34:36,530 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Plugin:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:34:36,578 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:36,579 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:34:36,584 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:36,585 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:34:59,688 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:59,688 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:34:59,689 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:34:59,689 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:37:55,119 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Moteur:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/pom.xml.
+2016-11-22 13:37:55,209 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Plugin:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/pom.xml.
+2016-11-22 13:37:55,296 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:37:55,297 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:37:55,309 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:37:55,310 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:37:55,400 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:37:55,402 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:37:55,406 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:37:55,409 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:43:37,259 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:37,260 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:43:37,282 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:37,283 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:43:37,611 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:37,611 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:43:37,612 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:37,613 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:43:58,624 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:58,625 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:43:58,628 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:58,630 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:43:58,876 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:58,877 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:43:58,888 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:58,889 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:43:59,941 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:59,942 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:43:59,945 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:59,946 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:43:59,959 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:59,960 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:43:59,964 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:43:59,965 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:44:28,737 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:44:28,738 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:44:28,742 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:44:28,755 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:44:29,214 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:44:29,215 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:44:29,218 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:44:29,219 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:45:27,898 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:45:27,899 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:45:27,900 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:45:27,900 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:45:28,090 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:45:28,091 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:45:28,098 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:45:28,101 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:48:16,374 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:48:16,381 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:48:16,384 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:48:16,385 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:48:47,016 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:48:47,018 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:48:47,041 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:48:47,042 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:48:47,391 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:48:47,393 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:48:47,404 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:48:47,405 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:50:29,094 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:29,113 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:50:29,133 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:29,134 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:50:29,388 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:29,389 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:50:29,396 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:29,397 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:50:35,165 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:35,166 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:50:35,175 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:35,179 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:50:35,197 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:35,198 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:50:35,205 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:50:35,206 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:51:45,875 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Moteur:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/pom.xml.
+2016-11-22 13:51:45,900 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Moteur:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:51:45,973 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: unice.miage.m1.projet:Plugin:1.0-SNAPSHOT @ /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/pom.xml.
+2016-11-22 13:51:46,039 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:46,040 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:51:46,043 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:46,044 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:51:46,084 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Plugin:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:51:46,097 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:46,098 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:51:46,101 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:46,102 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:51:47,510 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for unice.miage.m1.projet:Moteur:jar:1.0-SNAPSHOT is missing, no dependency information available
+2016-11-22 13:51:47,541 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:47,542 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/main/resources
+2016-11-22 13:51:47,549 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:47,550 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Moteur/src/test/resources
+2016-11-22 13:51:47,758 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:47,759 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/main/resources
+2016-11-22 13:51:47,762 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-11-22 13:51:47,763 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/deptinfo/Documents/Projet-PA-RobotWAr/Plugin/src/test/resources
+2016-11-22 13:56:29,186 [Framework stop] ERROR o.e.m.c.i.p.r.ProjectRegistryReader - Can't write workspace state
+java.io.FileNotFoundException: /home/deptinfo/Documents/Projet-PA-RobotWAr/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser (Aucun fichier ou dossier de ce type)
+	at java.io.FileOutputStream.open0(Native Method) ~[na:1.8.0_101]
+	at java.io.FileOutputStream.open(FileOutputStream.java:270) ~[na:1.8.0_101]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213) ~[na:1.8.0_101]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162) ~[na:1.8.0_101]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.writeWorkspaceState(ProjectRegistryReader.java:127) ~[org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.writeWorkspaceState(ProjectRegistryManager.java:935) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.MavenPluginActivator.stop(MavenPluginActivator.java:296) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_101]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.Module.stop(Module.java:498) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.Module.stop(Module.java:498) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165) [org.eclipse.osgi_3.11.1.v20160708-1632.jar:na]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_101]
