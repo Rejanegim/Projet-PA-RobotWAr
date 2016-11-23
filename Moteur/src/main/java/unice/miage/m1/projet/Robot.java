@@ -41,6 +41,30 @@ public class Robot implements IRobot {
 		 pluginattaque = a ;
 	}
 
+	
+	
+	public Robot() {
+		vie = 100;
+
+		vitesse = 10;
+
+		// Couleur aléatoire du robot
+		float randomr = (float) (Math.random()); // opacite de la couleur rouge
+		float randomv = (float) (Math.random()); // opacite de la couleur vert
+		float randomb = (float) (Math.random()); // opacite de la couleur bleu
+
+		couleur = new Color(randomr, randomv, randomb);
+
+		// Position aléatoire du robot
+		int x = (int) (Math.random() * 500);
+		int y = (int) (Math.random() * 500);
+		position = new Point(x, y);
+		pluginsgraphique = new ArrayList<IPluginGraphique>()  ;
+
+	}
+
+
+
 	public int getVie() {
 		return vie;
 	}
@@ -91,10 +115,14 @@ public class Robot implements IRobot {
 	public void setPluginDeplacement(IPluginDeplacement pluginDeplacement) {
 		this.pluginDeplacement = pluginDeplacement;
 	}
+	
+	public void setPluginGraphique(IPluginGraphique plugingraphique) {
+		this.pluginsgraphique.add(plugingraphique);
+	}
 
 	public void paint(Graphics g) {
 		for (IPluginGraphique decor : pluginsgraphique) {
-		decor.paint(g, this);
+		decor.paint(g, this);;
 		}
 	}
 

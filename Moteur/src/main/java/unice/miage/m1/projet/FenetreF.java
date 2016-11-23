@@ -35,13 +35,13 @@ public class FenetreF extends JFrame implements IFenetre {
 
 	@Override
 	public void paint(Graphics g) {
-		Color bg =new Color(255,255,255) ;
+		Color bg = Color.WHITE ;
 		g.setColor(bg);
 		g.drawRect(0 , 0 , 510 , 510) ;
 		g.fillRect(0, 0, 510, 510);
 		for (IRobot robot : listRobots) {
-
 			robot.paint(g);
 		}
+
 	}
 }

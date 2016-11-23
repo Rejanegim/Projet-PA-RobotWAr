@@ -13,7 +13,7 @@ public class AffichageArme implements IPluginGraphique {
 		Color c = Color.RED ;
 		g.setColor(c);
 	    float capEnRadian=robot.getCap()*(float)(Math.PI/180);
-	    Point p =robot.getPosition() ; 
+	    Point p =robot.getPosition() ;    
         g.drawLine(Math.round(p.x),
                    Math.round(p.y),
                    Math.round(p.x+20*(float)Math.cos(capEnRadian)),
