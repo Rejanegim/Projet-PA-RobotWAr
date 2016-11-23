@@ -58,6 +58,20 @@ public class Moteur {
 					IPluginGraphique truc2 = (IPluginGraphique) o2;
 					r1.setPluginGraphique(truc2);
 				}
+				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageArme")) {
+					Class<?> cl = l.get(j);
+					Constructor[] c2 = cl.getConstructors();
+					Constructor cons2 = c2[0]; // on va dans un 1er
+												// temps supposé qu'il
+												// n'y qu'un seul
+												// constructeur
+					// get contstuctor
+					
+					Object o2 = cons2.newInstance();
+					// invoke
+					IPluginGraphique truc2 = (IPluginGraphique) o2;
+					r1.setPluginGraphique(truc2);
+				}
 				// Ajout du robot à la liste
 				listRobots.add(r1);
 			
@@ -78,7 +92,7 @@ public class Moteur {
 
 				// Timer entre chaque tour d'un robot
 				try {
-					TimeUnit.MILLISECONDS.sleep(100);
+					TimeUnit.MILLISECONDS.sleep(50);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
