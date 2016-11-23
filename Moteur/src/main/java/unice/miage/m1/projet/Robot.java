@@ -7,17 +7,20 @@ import java.awt.Point;
 public class Robot implements IRobot {
 	private int vie;
 	private Color couleur;
-	private int ptMouvement;
+	private int vitesse;
 	private Point position;
+	private float cap ; 
 
 	/** plugin deplacement */
 	private IPluginDeplacement pluginDeplacement;
-
-	public Robot() {
+	private IPluginGraphique plugingraphique ; 
+	private IPluginAttaque pluginattaque ;
+	
+	public Robot(IPluginDeplacement d, IPluginGraphique g, IPluginAttaque a) {
 		// Nombre de points de vie d'un robot
-		vie = 10;
+		vie = 100;
 
-		ptMouvement = 50;
+		vitesse = 10;
 
 		// Couleur aléatoire du robot
 		float randomr = (float) (Math.random()); // opacite de la couleur rouge
@@ -32,7 +35,9 @@ public class Robot implements IRobot {
 		position = new Point(x, y);
 
 		// Récupération du plugin permettant de déplacer le robot
-		// pluginDeplacement = new PluginDeplacementAleatoire();
+		 pluginDeplacement = d;
+		 plugingraphique = g; 
+		 pluginattaque = a ;
 	}
 
 	public int getVie() {
@@ -52,11 +57,11 @@ public class Robot implements IRobot {
 	}
 
 	public int getPtMouvement() {
-		return ptMouvement;
+		return vitesse;
 	}
 
 	public void setPtMouvement(int ptMouvement) {
-		this.ptMouvement = ptMouvement;
+		this.vitesse = ptMouvement;
 	}
 
 	public Point getPosition() {
@@ -66,6 +71,17 @@ public class Robot implements IRobot {
 	public void setPosition(Point position) {
 		this.position = position;
 	}
+	public float getCap() {
+		return cap;
+	}
+
+	public void setCap(float cap) {
+		this.cap = cap;
+	}
+	  public void tourner(float deltaC) {
+			this.cap = this.getCap() + deltaC;
+		}
+	
 
 	public IPluginDeplacement getPluginDeplacement() {
 		return pluginDeplacement;
@@ -76,19 +92,20 @@ public class Robot implements IRobot {
 	}
 
 	public void paint(Graphics g) {
-		g.setColor(couleur);
-		g.drawRect(position.x, position.y, 10, 10);
-		g.fillRect(position.x, position.y, 10, 10);
+		plugingraphique.paint(g, this);
+//		g.setColor(couleur);
+//		g.drawRect(position.x, position.y, 10, 10);
+//		g.fillRect(position.x, position.y, 10, 10);
 
 	}
 
 	public void deplacement() {
 		// position = pluginDeplacement.deplacement(this);
 		if (pluginDeplacement != null) {
-			position = pluginDeplacement.deplacement(this);
+			position = pluginDeplacement.deplacement(this,vitesse);
 		}
 	}
-
+	  
 	public void attaque() {
 
 	}

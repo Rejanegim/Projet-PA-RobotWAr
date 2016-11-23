@@ -43,7 +43,7 @@ public class PluginRobot implements IPluginGraphique {
 	}
 
 
-	public void paint(Graphics g) {
+	public void paint(Graphics g, IRobot r) {
 		Color c = new Color(randomr, randomv, randomb);
 		g.setColor(c);
 		g.drawRect(x, y, 10, 10);

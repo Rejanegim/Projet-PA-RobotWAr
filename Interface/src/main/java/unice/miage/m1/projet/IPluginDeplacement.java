@@ -4,7 +4,7 @@ import java.awt.Point;
 
 public interface IPluginDeplacement {
 
-	public Point deplacement(IRobot r);
+	public Point deplacement(IRobot r, int v);
 
 }
 

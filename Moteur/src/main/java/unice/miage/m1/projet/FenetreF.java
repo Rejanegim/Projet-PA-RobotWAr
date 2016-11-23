@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-public class FenetreF extends JFrame implements IPluginGraphique {
+public class FenetreF extends JFrame implements IFenetre {
 
 	/**
 	 * 

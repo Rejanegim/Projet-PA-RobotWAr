@@ -23,20 +23,25 @@ public class TestRobot extends JFrame implements IPluginGraphique {
 	}
 	
 	public void paint(Graphics g){
-		Color bg =new Color(255,255,255) ;
-		g.setColor(bg);
-		g.drawRect(0 , 0 , 510 , 510) ;
-		g.fillRect(0, 0, 510, 510);
-		PluginRobot Robot1 = new PluginRobot();
-		Robot1.paint(g);
-		PluginRobot Robot2 = new PluginRobot();
-		Robot2.paint(g);
-		PluginRobot Robot3 = new PluginRobot();
-		Robot3.paint(g);
+//		Color bg =new Color(255,255,255) ;
+//		g.setColor(bg);
+//		g.drawRect(0 , 0 , 510 , 510) ;
+//		g.fillRect(0, 0, 510, 510);
+//		PluginRobot Robot1 = new PluginRobot();
+//		Robot1.paint(g);
+//		PluginRobot Robot2 = new PluginRobot();
+//		Robot2.paint(g);
+//		PluginRobot Robot3 = new PluginRobot();
+//		Robot3.paint(g);
 	}
 
 	public static void main(String[] args) {
 		TestRobot ts = new TestRobot();
+		
+	}
+
+	public void paint(Graphics g, IRobot robot) {
+		// TODO Auto-generated method stub
 		
 	}
 }

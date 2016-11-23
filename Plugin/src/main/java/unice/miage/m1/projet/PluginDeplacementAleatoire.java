@@ -5,27 +5,14 @@ import java.util.concurrent.TimeUnit;
 
 public class PluginDeplacementAleatoire implements IPluginDeplacement {
 
-	private float cap;
+	
 	// private ArrayList<PluginRobot> listRobots;
 	// private FenetreF fenetre;
-
+	int vitesse ;
 	IRobot robot;
 
 	public PluginDeplacementAleatoire() {
-
-		// fenetre = new FenetreF();
-		//
-		// listRobots = new ArrayList();
-		//
-		// // Création des robots :
-		// for (int i = 0; i < nbRobots; i++) {
-		// PluginRobot r1 = new PluginRobot();
-		//
-		// listRobots.add(r1);
-		// }
-		//
-		// fenetre.setListeRobots(listRobots);
-		// avancer(10);
+		this.vitesse =10 ;
 
 	}
 
@@ -34,49 +21,39 @@ public class PluginDeplacementAleatoire implements IPluginDeplacement {
 				|| robot.getPosition().getY() > robot.yMax - 5 || robot.getPosition().getY() < 5);
 	}
 
-	public float getCap() {
-		return cap;
-	}
+	
 
-	public void setCap(float cap) {
-		this.cap = cap;
-	}
-
-	public void tourner(float deltaC) {
-		this.cap = this.getCap() + deltaC;
-	}
-
-	public void avancer(float longueur) {
-		int tours = (int) Double.POSITIVE_INFINITY;
-		for (int i = 1; i <= tours; i++) {
-			// for (PluginRobot robot : listRobots) {
-			int x = (int) robot.getPosition().getX();
-			int y = (int) robot.getPosition().getY();
-			if (this.auBord(robot)) {
-				this.tourner(180);
-			}
-			try {
-				TimeUnit.MILLISECONDS.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			this.setCap((float) (Math.random() * 360));
-			float capEnRadian = this.cap * (float) (Math.PI / 180); // conversion
-																	// degre2radian
-			Point point =new Point(((int) (robot.getPosition().getX() + longueur * (float) Math.cos(capEnRadian))),
-					(int) (robot.getPosition().getY() + longueur * (float) Math.sin(capEnRadian)));
-			
-			robot.setPosition(point);
-
-			
-			System.out.println("mouvement");
+//	public void avancer(float longueur) {
+//		int tours = (int) Double.POSITIVE_INFINITY;
+//		for (int i = 1; i <= tours; i++) {
+//			// for (PluginRobot robot : listRobots) {
+//			int x = (int) robot.getPosition().getX();
+//			int y = (int) robot.getPosition().getY();
+//			if (this.auBord(robot)) {
+//				this.tourner(180);
+//			}
+//			try {
+//				TimeUnit.MILLISECONDS.sleep(100);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			this.setCap((float) (Math.random() * 360));
+//			float capEnRadian = this.cap * (float) (Math.PI / 180); // conversion
+//																	// degre2radian
+//			Point point =new Point(((int) (robot.getPosition().getX() + longueur * (float) Math.cos(capEnRadian))),
+//					(int) (robot.getPosition().getY() + longueur * (float) Math.sin(capEnRadian)));
+//			
+//			robot.setPosition(point);
+//
+//			
+//			System.out.println("mouvement");
 			//
 			// fenetre.repaint();
 			// }
-			//
-		}
-	}
+//			//
+//		}
+//	}
 
 //	public static void main(String[] args) {
 //		PluginDeplacementAleatoire random = new PluginDeplacementAleatoire();
@@ -91,9 +68,17 @@ public class PluginDeplacementAleatoire implements IPluginDeplacement {
 //
 //	}
 
-	public Point deplacement(IRobot r) {
+	public Point deplacement(IRobot r, int vitesse ) {
+		if (this.auBord(r)) {
+			r.tourner(180);
+		}
+		r.setCap((float) (Math.random() * 360));
+		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
 		Point p = r.getPosition();
-		p.x +=2;
+		Point point =new Point(((int) (p.x + vitesse * (float) Math.cos(capEnRadian))),
+				(int) (p.y + vitesse * (float) Math.sin(capEnRadian)));
+		
+		r.setPosition(point);
 		return p;
 	}
 
