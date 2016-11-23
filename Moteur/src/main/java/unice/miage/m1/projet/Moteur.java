@@ -45,7 +45,7 @@ public class Moteur {
 
 	}
 
-	private void gestionDesTours() {
+	private void gestionDesTours(Graphics g) {
 		while (true) {
 
 			// On parcourt la liste des robots
@@ -59,7 +59,7 @@ public class Moteur {
 				}
 				
 				// On demande au robot de se dessiner
-			//	robot.paint(g)
+				robot.paint(g) ; 
 
 				// On demande au robot de se déplacer
 				robot.deplacement();
@@ -79,6 +79,5 @@ public class Moteur {
 		Repository rep = new Repository(f);
 		List l = rep.load();
 		Moteur moteur = new Moteur(4, l);
-		moteur.gestionDesTours();
 	}
 }
