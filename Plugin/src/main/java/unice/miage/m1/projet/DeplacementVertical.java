@@ -52,8 +52,8 @@ public class DeplacementVertical implements IPluginDeplacement {
 //	}
 
 	public boolean auBord(IRobot robot) {
-		return (robot.getPosition().getX() > robot.xMax - 5 || robot.getPosition().getX() < 5
-				|| robot.getPosition().getY() > robot.yMax - 5 || robot.getPosition().getY() < 5);
+		return (robot.getPosition().getX() > robot.xMax - 15 || robot.getPosition().getX() < 15
+				|| robot.getPosition().getY() > robot.yMax - 15 || robot.getPosition().getY() < 15);
 	}
 	
 //	public static void main(String[] args) {

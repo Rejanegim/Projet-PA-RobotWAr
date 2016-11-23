@@ -49,8 +49,8 @@ public class AffichageRobot  implements IPluginGraphique {
 		Color c = r.getCouleur();
 		Point p = r.getPosition();
 		g.setColor(c);
-		g.drawRect(p.x, p.y, 10, 10);
-		g.fillRect(p.x, p.y, 10, 10);
+		g.drawRect(p.x, p.y, 20, 20);
+		g.fillRect(p.x, p.y, 20, 20);
 //			for (int i = 0; i < listRobots.size(); i++) {
 //				listRobots.get(i).paint(g);
 //			}
