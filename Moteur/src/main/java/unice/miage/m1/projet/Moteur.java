@@ -59,6 +59,7 @@ public class Moteur {
 				}
 				
 				// On demande au robot de se dessiner
+	
 				robot.paint(g) ; 
 
 				// On demande au robot de se déplacer
