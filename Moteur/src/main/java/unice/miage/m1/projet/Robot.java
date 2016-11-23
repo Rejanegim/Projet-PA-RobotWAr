@@ -3,6 +3,7 @@ package unice.miage.m1.projet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.ArrayList;
 
 public class Robot implements IRobot {
 	private int vie;
@@ -13,10 +14,10 @@ public class Robot implements IRobot {
 
 	/** plugin deplacement */
 	private IPluginDeplacement pluginDeplacement;
-	private IPluginGraphique plugingraphique ; 
+	private ArrayList<IPluginGraphique> pluginsgraphique ; 
 	private IPluginAttaque pluginattaque ;
 	
-	public Robot(IPluginDeplacement d, IPluginGraphique g, IPluginAttaque a) {
+	public Robot(IPluginDeplacement d,  ArrayList<IPluginGraphique> g, IPluginAttaque a) {
 		// Nombre de points de vie d'un robot
 		vie = 100;
 
@@ -36,7 +37,7 @@ public class Robot implements IRobot {
 
 		// Récupération du plugin permettant de déplacer le robot
 		 pluginDeplacement = d;
-		 plugingraphique = g; 
+		 pluginsgraphique = g; 
 		 pluginattaque = a ;
 	}
 
@@ -92,11 +93,9 @@ public class Robot implements IRobot {
 	}
 
 	public void paint(Graphics g) {
-		plugingraphique.paint(g, this);
-//		g.setColor(couleur);
-//		g.drawRect(position.x, position.y, 10, 10);
-//		g.fillRect(position.x, position.y, 10, 10);
-
+		for (IPluginGraphique decor : pluginsgraphique) {
+		decor.paint(g, this);
+		}
 	}
 
 	public void deplacement() {
