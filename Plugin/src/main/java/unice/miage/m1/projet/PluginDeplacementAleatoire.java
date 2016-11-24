@@ -75,10 +75,9 @@ public class PluginDeplacementAleatoire implements IPluginDeplacement {
 		r.setCap((float) (Math.random() * 360));
 		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
 		Point p = r.getPosition();
-		Point point =new Point(((int) (p.x + vitesse * (float) Math.cos(capEnRadian))),
-				(int) (p.y + vitesse * (float) Math.sin(capEnRadian)));
-		
-		r.setPosition(point);
+		p.x=(int) (p.x + vitesse * (float) Math.cos(capEnRadian));
+		p.y=(int) (p.y + vitesse * (float) Math.sin(capEnRadian));
+	//	System.out.println(p);
 		return p;
 	}
 

@@ -78,7 +78,7 @@ public class Moteur {
 			}
 			Robot r2 = new Robot();
 			for (int j = 0; j < l.size(); j++) {
-				if (l.get(j).getName().equals("unice.miage.m1.projet.DeplacementVertical")) {
+				if (l.get(j).getName().equals("unice.miage.m1.projet.PluginDeplacementAleatoire")) {
 					Class<?> classe = l.get(j);
 					Constructor[] c = classe.getConstructors();
 					Constructor cons = c[0]; // on va dans un 1er temps supposé
@@ -163,11 +163,10 @@ public class Moteur {
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		File fichier = new File("") ;
-		String chemin= fichier.getAbsolutePath();
-		chemin = chemin.replaceAll("Moteur", "Plugin"+File.separator+"target"+File.separator+"classes");
-		System.out.println(chemin);
-		File f = new File(chemin) ;
+		File fichier = new File("");
+		String chemin = fichier.getAbsolutePath();
+		chemin = chemin.replaceAll("Moteur", "Plugin" + File.separator + "target" + File.separator + "classes");
+		File f = new File(chemin);
 		Repository rep = new Repository(f);
 		List l = rep.load();
 		Moteur moteur = new Moteur(2, l);
