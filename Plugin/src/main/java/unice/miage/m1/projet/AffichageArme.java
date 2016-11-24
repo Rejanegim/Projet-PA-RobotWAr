@@ -10,7 +10,7 @@ public class AffichageArme implements IPluginGraphique {
 	
 	public void paint(Graphics g, IRobot robot) {
 		// TODO Auto-generated method stub
-		Color c = Color.RED ;
+		Color c = robot.getCouleur();
 		g.setColor(c);
 	    float capEnRadian=robot.getCap()*(float)(Math.PI/180);
 	    Point p =robot.getPosition() ;    

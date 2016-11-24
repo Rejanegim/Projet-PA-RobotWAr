@@ -76,6 +76,53 @@ public class Moteur {
 				listRobots.add(r1);
 			
 			}
+			Robot r2 = new Robot();
+			for (int j = 0; j < l.size(); j++) {
+				if (l.get(j).getName().equals("unice.miage.m1.projet.DeplacementVertical")) {
+					Class<?> classe = l.get(j);
+					Constructor[] c = classe.getConstructors();
+					Constructor cons = c[0]; // on va dans un 1er temps supposé
+												// qu'il n'y qu'un seul
+												// constructeur
+					// get contstuctor
+					Object o = cons.newInstance();
+					// invoke
+					IPluginDeplacement truc = (IPluginDeplacement) o;
+					r2.setPluginDeplacement(truc);
+				}
+
+				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageRobot")) {
+					Class<?> cl = l.get(j);
+					Constructor[] c2 = cl.getConstructors();
+					Constructor cons2 = c2[0]; // on va dans un 1er
+												// temps supposé qu'il
+												// n'y qu'un seul
+												// constructeur
+					// get contstuctor
+					
+					Object o2 = cons2.newInstance();
+					// invoke
+					IPluginGraphique truc2 = (IPluginGraphique) o2;
+					r2.setPluginGraphique(truc2);
+				}
+				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageArme")) {
+					Class<?> cl = l.get(j);
+					Constructor[] c2 = cl.getConstructors();
+					Constructor cons2 = c2[0]; // on va dans un 1er
+												// temps supposé qu'il
+												// n'y qu'un seul
+												// constructeur
+					// get contstuctor
+					
+					Object o2 = cons2.newInstance();
+					// invoke
+					IPluginGraphique truc2 = (IPluginGraphique) o2;
+					r2.setPluginGraphique(truc2);
+				}
+				// Ajout du robot à la liste
+				listRobots.add(r2);
+			
+			}
 
 			fenetre.setListeRobots(listRobots);
 		}
@@ -120,7 +167,7 @@ public class Moteur {
 		File f = new File("/home/deptinfo/Documents/workspacePA/Projet-PA-RobotWAr/Plugin/target/classes");
 		Repository rep = new Repository(f);
 		List l = rep.load();
-		Moteur moteur = new Moteur(3, l);
+		Moteur moteur = new Moteur(2, l);
 		Graphics g = moteur.fenetre.getGraphics();
 		moteur.gestionDesTours(g);
 		

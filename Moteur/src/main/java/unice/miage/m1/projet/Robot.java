@@ -122,7 +122,7 @@ public class Robot implements IRobot {
 
 	public void paint(Graphics g) {
 		for (IPluginGraphique decor : pluginsgraphique) {
-		decor.paint(g, this);;
+		decor.paint(g, this);
 		}
 	}
 

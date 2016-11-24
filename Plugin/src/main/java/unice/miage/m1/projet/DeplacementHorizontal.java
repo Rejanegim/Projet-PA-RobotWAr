@@ -69,7 +69,7 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 	public Point deplacement(IRobot r, int vitesse) {
 		if (this.auBord(r)) {
 			r.tourner(180);
-		}
+		}		
 		float capEnRadian = r.getCap() * (float) (Math.PI / 180); 
 		Point p = r.getPosition();
 		p.x +=vitesse*(float) Math.cos(capEnRadian);

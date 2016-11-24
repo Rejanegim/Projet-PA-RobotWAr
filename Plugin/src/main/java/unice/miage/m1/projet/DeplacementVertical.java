@@ -56,20 +56,16 @@ public class DeplacementVertical implements IPluginDeplacement {
 				|| robot.getPosition().getY() > robot.yMax - 15 || robot.getPosition().getY() < 15);
 	}
 	
-//	public static void main(String[] args) {
-//		DeplacementVertical mo = new DeplacementVertical(2);
-//
-//	}
-
-
 	
 	public Point deplacement(IRobot r, int vitesse) {
-		if (this.auBord(r)) {
-			r.tourner(180);
-		}
+		int angle = 270 ;
+		r.setCap(angle);
 		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
 		Point p = r.getPosition();
 		p.y +=vitesse *(float) Math.sin(capEnRadian); 
+		if (this.auBord(r)) {
+			r.setCap((-1)*angle);
+		}
 		return p;
 	}
 
