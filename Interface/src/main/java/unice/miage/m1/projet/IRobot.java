@@ -28,8 +28,11 @@ public interface IRobot {
 	
 	public void attaque();
 	
+	public int getVie() ;
 
+	public void setPositionScore(int positionScore) ;
 	
+	public int getPositionScore() ;
 	
 	
 	

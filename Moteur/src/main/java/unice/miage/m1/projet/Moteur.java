@@ -5,11 +5,12 @@ import java.awt.Graphics;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 
 public class Moteur {
 
@@ -18,12 +19,13 @@ public class Moteur {
 
 	/** Fenetre du jeu */
 	private FenetreF fenetre;
+	
+	private JMenuBar menuBar;
 
 	public Moteur(int nbRobots, List<Class> l) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 
 		fenetre = new FenetreF();
-
 		listRobots = new ArrayList();
 
 		// Création des robots :
@@ -105,6 +107,20 @@ public class Moteur {
 					IPluginGraphique truc2 = (IPluginGraphique) o2;
 					r2.setPluginGraphique(truc2);
 				}
+				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageScore")) {
+					Class<?> cl = l.get(j);
+					Constructor[] c2 = cl.getConstructors();
+					Constructor cons2 = c2[0]; // on va dans un 1er
+												// temps supposé qu'il
+												// n'y qu'un seul
+												// constructeur
+					// get contstuctor
+
+					Object o2 = cons2.newInstance();
+					// invoke
+					IPluginGraphique truc2 = (IPluginGraphique) o2;
+					r2.setPluginGraphique(truc2);
+				}
 				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageArme")) {
 					Class<?> cl = l.get(j);
 					Constructor[] c2 = cl.getConstructors();
@@ -125,10 +141,17 @@ public class Moteur {
 			}
 
 			fenetre.setListeRobots(listRobots);
+
 		}
 
 		// Lancement du jeu
 
+	}
+
+	public Moteur(List<Class> l) {
+		super();
+		this.fenetre = new FenetreF();
+		this.listRobots = new ArrayList();
 	}
 
 	private void gestionDesTours(Graphics g) {
@@ -139,7 +162,7 @@ public class Moteur {
 
 				// Timer entre chaque tour d'un robot
 				try {
-					TimeUnit.MILLISECONDS.sleep(50);
+					TimeUnit.MILLISECONDS.sleep(60);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -160,6 +183,8 @@ public class Moteur {
 		}
 
 	}
+	
+
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
@@ -169,9 +194,11 @@ public class Moteur {
 		File f = new File(chemin);
 		Repository rep = new Repository(f);
 		List l = rep.load();
-		Moteur moteur = new Moteur(2, l);
+		Moteur moteur = new Moteur(2,l);
+		moteur.fenetre.setVisible(true);
 		Graphics g = moteur.fenetre.getGraphics();
 		moteur.gestionDesTours(g);
+	
 
 	}
 }

@@ -11,7 +11,8 @@ public class Robot implements IRobot {
 	private int vitesse;
 	private Point position;
 	private float cap ; 
-
+	private int positionScore ;
+	
 	/** plugin deplacement */
 	private IPluginDeplacement pluginDeplacement;
 	private ArrayList<IPluginGraphique> pluginsgraphique ; 
@@ -39,6 +40,8 @@ public class Robot implements IRobot {
 		 pluginDeplacement = d;
 		 pluginsgraphique = g; 
 		 pluginattaque = a ;
+		 
+	
 	}
 
 	
@@ -107,6 +110,18 @@ public class Robot implements IRobot {
 			this.cap = this.getCap() + deltaC;
 		}
 	
+	 
+	public int getPositionScore() {
+		return positionScore;
+	}
+
+
+
+	public void setPositionScore(int positionScore) {
+		this.positionScore = positionScore;
+	}
+
+
 
 	public IPluginDeplacement getPluginDeplacement() {
 		return pluginDeplacement;
@@ -133,6 +148,7 @@ public class Robot implements IRobot {
 		}
 	}
 	  
+	
 	public void attaque() {
 
 	}
