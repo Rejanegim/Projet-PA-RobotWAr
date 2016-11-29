@@ -57,7 +57,10 @@ public class FenetreF extends JFrame implements IFenetre {
 					Robot robot = cr.afficherRobot() ;
 					Class<?>[] interf =this.getList().get(0).getInterfaces() ;
 					String nominter = interf[0].getName() ; 
-					System.out.println("liste des plugins :" + nominter);
+					 ArrayList<IRobot> list = cr.getListRobots();
+					 for (int i = 0; i < list.size(); i++) {
+						 listRobots.add(list.get(i)) ;
+					}
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -90,7 +93,7 @@ public class FenetreF extends JFrame implements IFenetre {
 	}
 	
 	
-	public static void main(String[] args) {
-		FenetreF f= new FenetreF();
-	}
+//	public static void main(String[] args) {
+//		FenetreF f = new FenetreF();
+//	}
 }

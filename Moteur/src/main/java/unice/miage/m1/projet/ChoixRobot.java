@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,12 +22,16 @@ import javax.swing.JPanel;
 
 public class ChoixRobot extends JDialog {
 	List<Class> plugins ;
+	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private Robot robot = new Robot();
 	private boolean sendData;
 	private JLabel graphique, deplacement, attaque ; 
 	private ArrayList<Class> pg ; 
-	private ArrayList<JCheckBox> graphisme ;
+	private JCheckBox[] graphisme ;
 	private JComboBox mouve, attack;
+	private IPluginDeplacement pluginDeplacement;
+	private ArrayList<IPluginGraphique> pluginsgraphique = new ArrayList<IPluginGraphique> (); 
+	private IPluginAttaque pluginattaque ;
 	//private JTextField nom ; 
 
 	public ChoixRobot(JFrame parent, String title, boolean modal, List<Class> l) {
@@ -43,6 +49,16 @@ public class ChoixRobot extends JDialog {
 		this.setVisible(true);
 		return this.robot;
 	}
+	
+	
+
+	public ArrayList<IRobot> getListRobots() {
+		return listRobots;
+	}
+
+	public void setListRobots(ArrayList<IRobot> listRobots) {
+		this.listRobots = listRobots;
+	}
 
 	private void initComponent() {
 		
@@ -50,9 +66,8 @@ public class ChoixRobot extends JDialog {
 	    	JPanel panGraf = new JPanel();
 		    panGraf.setBackground(Color.white);
 		    panGraf.setBorder(BorderFactory.createTitledBorder("Affichage"));
-		    panGraf.setPreferredSize(new Dimension(440, 150));
+		    panGraf.setPreferredSize(new Dimension(440, 100));
 		    List<String> where = new ArrayList<String>();
-		   // = {"15 - 25 ans","26 - 35 ans","36 - 50 ans", "+ de 50 ans"} ;
 			for (int i = 0; i < plugins.size(); i++) {
 				Class<?>[] inter = plugins.get(i).getInterfaces() ; 
 				for (int j = 0; j < inter.length; j++) {
@@ -63,14 +78,14 @@ public class ChoixRobot extends JDialog {
 			}
 			String[] boxes = new String[ where.size() ];
 			where.toArray( boxes );
-		    //		    JCheckBox[] boxes = new JCheckBox[choixGraph.length];
-			JCheckBox [] cb = new JCheckBox [boxes.length] ;
-		    for(int i = 0; i < cb.length; i++){
-		       cb[i] = new JCheckBox(boxes[i]);
+//			JCheckBox [] cb = new JCheckBox [boxes.length] ;
+			graphisme = new JCheckBox [boxes.length] ;
+		    for(int i = 0; i < graphisme.length; i++){
+		       graphisme[i] = new JCheckBox(boxes[i]);
 		    }
-		    cb[0].setSelected(true);
+		    graphisme[0].setSelected(true);
 		    for(int i = 0; i < boxes.length; i++){
-		    	panGraf.add(cb[i]);
+		    	panGraf.add(graphisme[i]);
 		    }
 		
 
@@ -126,22 +141,114 @@ public class ChoixRobot extends JDialog {
 		boutonRobot.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-//				robot = new Robot((IPluginDeplacement)mouve.getSelectedItem(),getGraphiques(),(IPluginAttaque)attack.getSelectedItem()); 
+				for (int j = 0; j < plugins.size(); j++) {
+				if (plugins.get(j).getName().equals("unice.miage.m1.projet."+mouve.getSelectedItem())) {
+					Class<?> classe  = plugins.get(j);
+					Constructor[] c = classe.getConstructors();
+					Constructor cons = c[0]; // on va dans un 1er temps supposé
+												// qu'il n'y qu'un seul
+												// constructeur
+					// get contstuctor
+					Object o;
+					try {
+						o = cons.newInstance();
+						// invoke
+						pluginDeplacement = (IPluginDeplacement) o;
+					} catch (InstantiationException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IllegalAccessException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IllegalArgumentException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (InvocationTargetException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					}
+				if (plugins.get(j).getName().equals("unice.miage.m1.projet."+attack.getSelectedItem())) {
+					Class<?> classe  = plugins.get(j);
+					Constructor[] c = classe.getConstructors();
+					Constructor cons = c[0]; // on va dans un 1er temps supposé
+												// qu'il n'y qu'un seul
+												// constructeur
+					// get contstuctor
+					Object o;
+					try {
+						o = cons.newInstance();
+						// invoke
+						pluginattaque = (IPluginAttaque) o;
+					} catch (InstantiationException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IllegalAccessException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IllegalArgumentException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (InvocationTargetException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				
+					}
+				}
+
+				IRobot rb = new Robot(pluginDeplacement,getGraphiques(),pluginattaque); 
+				listRobots.add(rb);
+				System.out.println("un robot est crée !");
 //				// TODO Auto-generated method stub
+				
 //				
-//			}
-//		      public  ArrayList<IPluginGraphique> getGraphiques(){
-//		    	  ArrayList<IPluginGraphique> pluginsgraphiques = new ArrayList<IPluginGraphique>() ;
-//		    	 for (int i = 0; i < graphisme.size(); i++) {
-//					if (graphisme.get(i).isSelected()){
-//						pluginsgraphiques.add((IPluginGraphique) graphisme.get(i));
-//					}
-//				}
-//		               return pluginsgraphiques;
+			}
+		      public  ArrayList<IPluginGraphique> getGraphiques(){
+		    	  ArrayList<String> graphlist = new ArrayList<String>() ;
+		    	 for (int i = 0; i < graphisme.length; i++) {
+					if (graphisme[i].isSelected()){
+						graphlist.add(graphisme[i].getText());
+					}
+				}
+		    	 for (int i = 0; i < graphlist.size(); i++) {
+		    		 for (int k = 0; k < plugins.size(); k++) {
+		    			 if (plugins.get(k).getName().equals("unice.miage.m1.projet."+graphlist.get(i))) {
+		 					Class<?> classe  = plugins.get(k);
+		 					Constructor[] c = classe.getConstructors();
+		 					Constructor cons = c[0]; // on va dans un 1er temps supposé
+		 												// qu'il n'y qu'un seul
+		 												// constructeur
+		 					// get contstuctor
+		 					Object o;
+		 					try {
+		 						o = cons.newInstance();
+		 						// invoke
+		 						pluginsgraphique.add((IPluginGraphique) o); 
+		 					} catch (InstantiationException e1) {
+		 						// TODO Auto-generated catch block
+		 						e1.printStackTrace();
+		 					} catch (IllegalAccessException e1) {
+		 						// TODO Auto-generated catch block
+		 						e1.printStackTrace();
+		 					} catch (IllegalArgumentException e1) {
+		 						// TODO Auto-generated catch block
+		 						e1.printStackTrace();
+		 					} catch (InvocationTargetException e1) {
+		 						// TODO Auto-generated catch block
+		 						e1.printStackTrace();
+		 					}
+		 					
+		 					}
+						
+					}
+				}
+		               return pluginsgraphique;
 		      }
 		});
 
-		JButton cancelBouton = new JButton("Annuler");
+		JButton cancelBouton = new JButton("Voir le robot crée");
 		cancelBouton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

@@ -1,16 +1,16 @@
 package unice.miage.m1.projet;
 
-import java.awt.Color;
+
 import java.awt.Graphics;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
-
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+
 
 public class Moteur {
 
@@ -148,38 +148,52 @@ public class Moteur {
 
 	}
 
-	public Moteur(List<Class> l) {
+	public Moteur(){ //List<Class> l) {
 		super();
 		this.fenetre = new FenetreF();
-		this.listRobots = new ArrayList();
+		
 	}
-
-	private void gestionDesTours(Graphics g) {
+	
+	
+	private void gestionDesTours(Graphics g)  {
 		while (true) {
-
+			this.listRobots = fenetre.getListRobots();
+//			Iterator<IRobot> li=(Iterator<IRobot>) listRobots;
+//			
+//			while(li.hasNext()){
+//				Robot robot = (Robot) li.next();
+////				 Timer entre chaque tour d'un robot
+//				try {
+//					TimeUnit.MILLISECONDS.sleep(60);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//				}
+//				robot.paint(g);
+//				robot.deplacement();
+//				robot.attaque();
+//				fenetre.repaint();
+//			}
+			
+			
 			// On parcourt la liste des robots
+				
 			for (IRobot robot : listRobots) {
-
-				// Timer entre chaque tour d'un robot
+//				// Timer entre chaque tour d'un robot
 				try {
 					TimeUnit.MILLISECONDS.sleep(60);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 				}
-
+				
 				// On demande au robot de se dessiner
-
 				robot.paint(g);
-
-				// On demande au robot de se déplacer
-				robot.deplacement();
-
-				// On demande au robot d'attaquer
-				robot.attaque();
-
+//				// On demande au robot de se déplacer
+				robot.deplacement();	
+//				// On demande au robot d'attaquer
+				robot.attaque();				
 				fenetre.repaint();
 			}
-
 		}
 
 	}
@@ -188,17 +202,16 @@ public class Moteur {
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		File fichier = new File("");
-		String chemin = fichier.getAbsolutePath();
-		chemin = chemin.replaceAll("Moteur", "Plugin" + File.separator + "target" + File.separator + "classes");
-		File f = new File(chemin);
-		Repository rep = new Repository(f);
-		List l = rep.load();
-		Moteur moteur = new Moteur(2,l);
+//		File fichier = new File("");
+//		String chemin = fichier.getAbsolutePath();
+//		chemin = chemin.replaceAll("Moteur", "Plugin" + File.separator + "target" + File.separator + "classes");
+//		File f = new File(chemin);
+//		Repository rep = new Repository(f);
+//		List l = rep.load();
+		Moteur moteur = new Moteur();
 		moteur.fenetre.setVisible(true);
 		Graphics g = moteur.fenetre.getGraphics();
 		moteur.gestionDesTours(g);
-	
 
 	}
 }
