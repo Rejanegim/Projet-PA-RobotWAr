@@ -18,7 +18,7 @@ public class Moteur {
 	/** Fenetre du jeu */
 	private FenetreF fenetre;
 
-//	private JMenuBar menuBar;
+	// private JMenuBar menuBar;
 
 	public Moteur(int nbRobots, List<Class> l) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
@@ -154,19 +154,11 @@ public class Moteur {
 
 	private void gestionDesTours(Graphics g) {
 		while (true) {
-			synchronized (listRobots) {
+			
 				this.listRobots = fenetre.getListRobots();
 				// On parcourt la liste des robots
-
+				synchronized (listRobots) {
 				for (IRobot robot : listRobots) {
-					// // Timer entre chaque tour d'un robot
-					try {
-						TimeUnit.MILLISECONDS.sleep(60);
-
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-
 					// On demande au robot de se dessiner
 					robot.paint(g);
 					// // On demande au robot de se déplacer
@@ -174,50 +166,41 @@ public class Moteur {
 					// // On demande au robot d'attaquer
 					robot.attaque();
 					fenetre.repaint();
+					}
 				}
-			}
+					try {
+						TimeUnit.MILLISECONDS.sleep(60);
+
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+	
 		}
 
 	}
 
 	private void gestiondestours(Graphics g) {
 		while (true) {
-			
+
 			// if (listRobots == fenetre.getListRobots()) {
-			synchronized (listRobots) {
+			
 				for (Iterator<IRobot> li = listRobots.iterator(); li.hasNext();) {
-					// Timer entre chaque tour d'un robot
-					try {
-						TimeUnit.MILLISECONDS.sleep(60);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
+					synchronized (listRobots) {
 					Robot robot = (Robot) li.next();
 					fenetre.repaint();
 					robot.paint(g);
 					robot.deplacement();
 					robot.attaque();
-				
+				}
+				// Timer entre chaque tour d'un robot
+				try {
+					TimeUnit.MILLISECONDS.sleep(60);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
 			}
-			
-		} // else {
-		// this.listRobots = fenetre.getListRobots();
-		// for (Iterator<IRobot> li = listRobots.iterator(); li.hasNext();) {
-		// // Timer entre chaque tour d'un robot
-		// try {
-		// TimeUnit.MILLISECONDS.sleep(60);
-		// } catch (InterruptedException e) {
-		// e.printStackTrace();
-		// }
-		// Robot robot = (Robot) li.next();
-		// robot.paint(g);
-		// robot.deplacement();
-		// robot.attaque();
-		// fenetre.repaint();
-		// }
-		// }
-		// }
+		}
+
 	}
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
