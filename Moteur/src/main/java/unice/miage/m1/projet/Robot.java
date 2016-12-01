@@ -13,6 +13,7 @@ public class Robot implements IRobot {
 	private float cap ; 
 	private int positionScore ;
 	
+	
 	/** plugin deplacement */
 	private IPluginDeplacement pluginDeplacement;
 	private ArrayList<IPluginGraphique> pluginsgraphique ; 
@@ -32,8 +33,8 @@ public class Robot implements IRobot {
 		couleur = new Color(randomr, randomv, randomb);
 
 		// Position aléatoire du robot
-		int x = (int) (Math.random() * 500);
-		int y = (int) (Math.random() * 500);
+		int x = (int) (Math.random() * 600)+50;
+		int y = (int) (Math.random() * 600)+50;
 		position = new Point(x, y);
 
 		// Récupération du plugin permettant de déplacer le robot

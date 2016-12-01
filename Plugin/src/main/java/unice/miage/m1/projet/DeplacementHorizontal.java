@@ -61,8 +61,8 @@ public class DeplacementHorizontal implements IPluginDeplacement {
 //	}
 //	
 	public boolean auBord(IRobot robot) {
-		return (robot.getPosition().getX() > robot.xMax - 15 || robot.getPosition().getX() < 15
-				|| robot.getPosition().getY() > robot.yMax - 15 || robot.getPosition().getY() < 15);
+		return (robot.getPosition().getX() > robot.xMax -30 || robot.getPosition().getX() < 30
+				|| robot.getPosition().getY() > robot.yMax - 30 || robot.getPosition().getY() < 30);
 	}
 
 

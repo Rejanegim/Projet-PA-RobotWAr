@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,7 +33,7 @@ public class FenetreF extends JFrame implements IFenetre {
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1200, 700);
-	//	this.setResizable(false);
+		this.setResizable(false);
 		this.setBackground(Color.black);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
@@ -58,9 +59,11 @@ public class FenetreF extends JFrame implements IFenetre {
 					Class<?>[] interf =this.getList().get(0).getInterfaces() ;
 					String nominter = interf[0].getName() ; 
 					 ArrayList<IRobot> list = cr.getListRobots();
+						synchronized (listRobots){
 					 for (int i = 0; i < list.size(); i++) {
 						 listRobots.add(list.get(i)) ;
 					}
+				}
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -83,10 +86,8 @@ public class FenetreF extends JFrame implements IFenetre {
 
 	@Override
 	public void paint(Graphics g) {
-		Color bg = Color.WHITE;
-		g.setColor(bg);
-	//	g.drawRect(0, 20, 800, 650);
-		g.fillRect(10, 40, 800, 650);
+		g.setColor( Color.WHITE);
+		g.fillRect(0, 40, 700, 670);
 		for (IRobot robot : listRobots) {
 			robot.paint(g);
 		}

@@ -78,7 +78,6 @@ public class ChoixRobot extends JDialog {
 			}
 			String[] boxes = new String[ where.size() ];
 			where.toArray( boxes );
-//			JCheckBox [] cb = new JCheckBox [boxes.length] ;
 			graphisme = new JCheckBox [boxes.length] ;
 		    for(int i = 0; i < graphisme.length; i++){
 		       graphisme[i] = new JCheckBox(boxes[i]);
@@ -87,6 +86,7 @@ public class ChoixRobot extends JDialog {
 		    for(int i = 0; i < boxes.length; i++){
 		    	panGraf.add(graphisme[i]);
 		    }
+		
 		
 
 		// Le déplacement
@@ -199,8 +199,11 @@ public class ChoixRobot extends JDialog {
 				}
 
 				IRobot rb = new Robot(pluginDeplacement,getGraphiques(),pluginattaque); 
+				synchronized (listRobots){
 				listRobots.add(rb);
+				}
 				System.out.println("un robot est crée !");
+				setVisible(false);
 //				// TODO Auto-generated method stub
 				
 //				
@@ -248,7 +251,7 @@ public class ChoixRobot extends JDialog {
 		      }
 		});
 
-		JButton cancelBouton = new JButton("Voir le robot crée");
+		JButton cancelBouton = new JButton("Annuler");
 		cancelBouton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

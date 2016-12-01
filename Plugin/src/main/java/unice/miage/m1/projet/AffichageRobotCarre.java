@@ -3,17 +3,17 @@ package unice.miage.m1.projet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.util.ArrayList;
 
 
 
-public class AffichageRobot  implements IPluginGraphique {
+
+public class AffichageRobotCarre  implements IPluginGraphique {
 	
 //	private ArrayList<PluginRobot> listRobots;
 //	IFenetre fenetre; 
 //	int nbrobot  ;
 	
-	public AffichageRobot() {
+	public AffichageRobotCarre() {
 //
 ////		fenetre = new FenetreF();
 //		listRobots = new ArrayList();
@@ -51,6 +51,7 @@ public class AffichageRobot  implements IPluginGraphique {
 		g.setColor(c);
 		//g.drawRect(p.x, p.y, 20, 20);
 		g.fillRect(p.x, p.y, 20, 20);
+		//g.fillOval(p.x, p.y, 20, 20);
 //			for (int i = 0; i < listRobots.size(); i++) {
 //				listRobots.get(i).paint(g);
 //			}

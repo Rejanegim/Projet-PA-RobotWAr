@@ -8,7 +8,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class TestRobot extends JFrame implements IPluginGraphique {
+public class TestRobot extends JFrame  {
 
 	public TestRobot() {
 		this.setTitle("RobotWar");

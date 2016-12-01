@@ -52,21 +52,22 @@ public class DeplacementVertical implements IPluginDeplacement {
 //	}
 
 	public boolean auBord(IRobot robot) {
-		return (robot.getPosition().getX() > robot.xMax - 15 || robot.getPosition().getX() < 20
-				|| robot.getPosition().getY() > robot.yMax - 15 || robot.getPosition().getY() < 15);
+		return (robot.getPosition().getX()+20 > robot.xMax - 50 || robot.getPosition().getX()-20 < 50
+				|| robot.getPosition().getY()-20 > robot.yMax - 50 || robot.getPosition().getY()+20 < 50);
 	}
 	
 	
 	public Point deplacement(IRobot r, int vitesse) {
-		int angle = 270 ;
+		int angle = 90 ;
 		r.setCap(angle);
+		Point p = r.getPosition();
+		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
 		if (this.auBord(r)) {
 			r.tourner(180);
+			float capEnRadian2 = r.getCap() * (float) (Math.PI / 180);
+			p.y +=70 *(float) Math.sin(capEnRadian2); 	
 		}		
-		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
-		Point p = r.getPosition();
 		p.y +=vitesse *(float) Math.sin(capEnRadian); 
-		System.out.println(vitesse *(float) Math.sin(capEnRadian));
 		return p;
 	}
 

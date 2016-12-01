@@ -1,6 +1,5 @@
 package unice.miage.m1.projet;
 
-
 import java.awt.Graphics;
 import java.io.File;
 import java.lang.reflect.Constructor;
@@ -11,7 +10,6 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JMenuBar;
 
-
 public class Moteur {
 
 	/** Liste des robots */
@@ -19,8 +17,8 @@ public class Moteur {
 
 	/** Fenetre du jeu */
 	private FenetreF fenetre;
-	
-	private JMenuBar menuBar;
+
+//	private JMenuBar menuBar;
 
 	public Moteur(int nbRobots, List<Class> l) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
@@ -148,70 +146,93 @@ public class Moteur {
 
 	}
 
-	public Moteur(){ //List<Class> l) {
+	public Moteur() { // List<Class> l) {
 		super();
 		this.fenetre = new FenetreF();
-		
+		this.listRobots = fenetre.getListRobots();
 	}
-	
-	
-	private void gestionDesTours(Graphics g)  {
-		while (true) {
-			this.listRobots = fenetre.getListRobots();
-//			Iterator<IRobot> li=(Iterator<IRobot>) listRobots;
-//			
-//			while(li.hasNext()){
-//				Robot robot = (Robot) li.next();
-////				 Timer entre chaque tour d'un robot
-//				try {
-//					TimeUnit.MILLISECONDS.sleep(60);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//				}
-//				robot.paint(g);
-//				robot.deplacement();
-//				robot.attaque();
-//				fenetre.repaint();
-//			}
-			
-			
-			// On parcourt la liste des robots
-				
-			for (IRobot robot : listRobots) {
-//				// Timer entre chaque tour d'un robot
-				try {
-					TimeUnit.MILLISECONDS.sleep(60);
 
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+	private void gestionDesTours(Graphics g) {
+		while (true) {
+			synchronized (listRobots) {
+				this.listRobots = fenetre.getListRobots();
+				// On parcourt la liste des robots
+
+				for (IRobot robot : listRobots) {
+					// // Timer entre chaque tour d'un robot
+					try {
+						TimeUnit.MILLISECONDS.sleep(60);
+
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+
+					// On demande au robot de se dessiner
+					robot.paint(g);
+					// // On demande au robot de se déplacer
+					robot.deplacement();
+					// // On demande au robot d'attaquer
+					robot.attaque();
+					fenetre.repaint();
 				}
-				
-				// On demande au robot de se dessiner
-				robot.paint(g);
-//				// On demande au robot de se déplacer
-				robot.deplacement();	
-//				// On demande au robot d'attaquer
-				robot.attaque();				
-				fenetre.repaint();
 			}
 		}
 
 	}
-	
 
+	private void gestiondestours(Graphics g) {
+		while (true) {
+			
+			// if (listRobots == fenetre.getListRobots()) {
+			synchronized (listRobots) {
+				for (Iterator<IRobot> li = listRobots.iterator(); li.hasNext();) {
+					// Timer entre chaque tour d'un robot
+					try {
+						TimeUnit.MILLISECONDS.sleep(60);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					Robot robot = (Robot) li.next();
+					fenetre.repaint();
+					robot.paint(g);
+					robot.deplacement();
+					robot.attaque();
+				
+				}
+			}
+			
+		} // else {
+		// this.listRobots = fenetre.getListRobots();
+		// for (Iterator<IRobot> li = listRobots.iterator(); li.hasNext();) {
+		// // Timer entre chaque tour d'un robot
+		// try {
+		// TimeUnit.MILLISECONDS.sleep(60);
+		// } catch (InterruptedException e) {
+		// e.printStackTrace();
+		// }
+		// Robot robot = (Robot) li.next();
+		// robot.paint(g);
+		// robot.deplacement();
+		// robot.attaque();
+		// fenetre.repaint();
+		// }
+		// }
+		// }
+	}
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-//		File fichier = new File("");
-//		String chemin = fichier.getAbsolutePath();
-//		chemin = chemin.replaceAll("Moteur", "Plugin" + File.separator + "target" + File.separator + "classes");
-//		File f = new File(chemin);
-//		Repository rep = new Repository(f);
-//		List l = rep.load();
+		// File fichier = new File("");
+		// String chemin = fichier.getAbsolutePath();
+		// chemin = chemin.replaceAll("Moteur", "Plugin" + File.separator +
+		// "target" + File.separator + "classes");
+		// File f = new File(chemin);
+		// Repository rep = new Repository(f);
+		// List l = rep.load();
 		Moteur moteur = new Moteur();
 		moteur.fenetre.setVisible(true);
 		Graphics g = moteur.fenetre.getGraphics();
+		// moteur.gestionDesTours(g);
 		moteur.gestionDesTours(g);
-
 	}
 }

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.lang.Math;
 import java.awt.Color;
 
-public class PluginRobot implements IPluginGraphique {
+public class PluginRobot  {
 
 	private static final long serialVersionUID = 1L;
 
