@@ -4,20 +4,16 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class FenetreF extends JFrame implements IFenetre {
 
@@ -27,6 +23,14 @@ public class FenetreF extends JFrame implements IFenetre {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private JButton bouton = new JButton("Ajouter un Robot");
+	public JPanel panel = new JPanel()  {
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			for (IRobot robot : listRobots) {
+				robot.paint(g);
+			}
+		}
+	};
 
 	public FenetreF() {
 		this.setTitle("RobotWar");
@@ -39,7 +43,12 @@ public class FenetreF extends JFrame implements IFenetre {
 		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
 		Toolkit.getDefaultToolkit().setDynamicLayout(false);
 		this.getContentPane().setLayout(new FlowLayout());
+		panel.setPreferredSize(new Dimension(650,600));
+		panel.setSize(650,600);
+    	panel.setBackground(Color.white);
+		this.getContentPane().add(panel);
 		this.getContentPane().add(bouton);
+		this.pack();
 		bouton.addActionListener(new ActionListener() {
 
 			public List<Class> getList() throws ClassNotFoundException {
@@ -55,21 +64,21 @@ public class FenetreF extends JFrame implements IFenetre {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					ChoixRobot cr = new ChoixRobot(null, "Créez votre Robot", true, this.getList());
-					Robot robot = cr.afficherRobot() ;
-					Class<?>[] interf =this.getList().get(0).getInterfaces() ;
-					String nominter = interf[0].getName() ; 
-					 ArrayList<IRobot> list = cr.getListRobots();
-						synchronized (listRobots){
-					 for (int i = 0; i < list.size(); i++) {
-						 listRobots.add(list.get(i)) ;
+					Robot robot = cr.afficherRobot();
+					Class<?>[] interf = this.getList().get(0).getInterfaces();
+					String nominter = interf[0].getName();
+					ArrayList<IRobot> list = cr.getListRobots();
+					synchronized (listRobots) {
+						for (int i = 0; i < list.size(); i++) {
+							listRobots.add(list.get(i));
+						}
 					}
-				}
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-			
+
 		});
 		this.setVisible(true);
 	}
@@ -78,23 +87,24 @@ public class FenetreF extends JFrame implements IFenetre {
 		this.listRobots = listRobots;
 	}
 
-	
 	public ArrayList<IRobot> getListRobots() {
 		return listRobots;
 	}
 
-
-	@Override
-	public void paint(Graphics g) {
-		g.setColor( Color.WHITE);
-		g.fillRect(0, 40, 700, 670);
-		for (IRobot robot : listRobots) {
-			robot.paint(g);
-		}
-	}
 	
 	
-//	public static void main(String[] args) {
-//		FenetreF f = new FenetreF();
+//	@Override
+//	public void paint(Graphics g) {
+////		g.setColor(Color.WHITE);
+//		
+//		panel.paint(g);
+////		g.fillRect(0, 40, 650, 600);
+//		for (IRobot robot : listRobots) {
+//			robot.paint(g);
+//		}
 //	}
+
+	// public static void main(String[] args) {
+	// FenetreF f = new FenetreF();
+	// }
 }
