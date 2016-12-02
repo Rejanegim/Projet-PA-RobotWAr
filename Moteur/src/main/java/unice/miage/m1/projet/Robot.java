@@ -3,7 +3,7 @@ package unice.miage.m1.projet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.util.ArrayList;
+
 
 public class Robot implements IRobot {
 	private int vie;
@@ -11,15 +11,19 @@ public class Robot implements IRobot {
 	private int vitesse;
 	private Point position;
 	private float cap ; 
-	private int positionScore ;
+	
 	
 	
 	/** plugin deplacement */
 	private IPluginDeplacement pluginDeplacement;
-	private ArrayList<IPluginGraphique> pluginsgraphique ; 
+	private  IPluginGraphique pluginsgraphique ; 
 	private IPluginAttaque pluginattaque ;
 	
-	public Robot(IPluginDeplacement d,  ArrayList<IPluginGraphique> g, IPluginAttaque a) {
+	/**
+	 * Constructeur de Robot
+	 * 
+	 */
+	public Robot(IPluginDeplacement d,  IPluginGraphique g, IPluginAttaque a) {
 		// Nombre de points de vie d'un robot
 		vie = 100;
 
@@ -46,7 +50,10 @@ public class Robot implements IRobot {
 	}
 
 	
-	
+	/**
+	 * Constructeur de Robot
+	 * 
+	 */
 	public Robot() {
 		vie = 100;
 
@@ -63,10 +70,8 @@ public class Robot implements IRobot {
 		int x = (int) (Math.random() * 500);
 		int y = (int) (Math.random() * 500);
 		position = new Point(x, y);
-		pluginsgraphique = new ArrayList<IPluginGraphique>()  ;
 
 	}
-
 
 
 	public int getVie() {
@@ -112,18 +117,7 @@ public class Robot implements IRobot {
 		}
 	
 	 
-	public int getPositionScore() {
-		return positionScore;
-	}
-
-
-
-	public void setPositionScore(int positionScore) {
-		this.positionScore = positionScore;
-	}
-
-
-
+	
 	public IPluginDeplacement getPluginDeplacement() {
 		return pluginDeplacement;
 	}
@@ -133,12 +127,12 @@ public class Robot implements IRobot {
 	}
 	
 	public void setPluginGraphique(IPluginGraphique plugingraphique) {
-		this.pluginsgraphique.add(plugingraphique);
+		this.pluginsgraphique =plugingraphique ;
 	}
 
 	public void paint(Graphics g) {
-		for (IPluginGraphique decor : pluginsgraphique) {
-		decor.paint(g, this);
+		if (pluginsgraphique != null) {
+		this.pluginsgraphique.paint(g, this);
 		}
 	}
 

@@ -17,13 +17,11 @@ import javax.swing.JPanel;
 
 public class FenetreF extends JFrame implements IFenetre {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private JButton bouton = new JButton("Ajouter un Robot");
-	public JPanel panel = new JPanel()  {
+	public JPanel panel = new JPanel() {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			for (IRobot robot : listRobots) {
@@ -31,7 +29,12 @@ public class FenetreF extends JFrame implements IFenetre {
 			}
 		}
 	};
-
+	
+	/**
+	 * Contructeur de FenetreF.
+	 * Met en place tous les éléments de
+	 * la Fenetre du jeu.
+	 */
 	public FenetreF() {
 		this.setTitle("RobotWar");
 		this.setLocationRelativeTo(null);
@@ -43,9 +46,9 @@ public class FenetreF extends JFrame implements IFenetre {
 		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
 		Toolkit.getDefaultToolkit().setDynamicLayout(false);
 		this.getContentPane().setLayout(new FlowLayout());
-		panel.setPreferredSize(new Dimension(650,600));
-		panel.setSize(650,600);
-    	panel.setBackground(Color.white);
+		panel.setPreferredSize(new Dimension(650, 600));
+		panel.setSize(650, 600);
+		panel.setBackground(Color.white);
 		this.getContentPane().add(panel);
 		this.getContentPane().add(bouton);
 		this.pack();
@@ -60,7 +63,7 @@ public class FenetreF extends JFrame implements IFenetre {
 				List l = rep.load();
 				return l;
 			}
-
+			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					ChoixRobot cr = new ChoixRobot(null, "Créez votre Robot", true, this.getList());
@@ -91,20 +94,4 @@ public class FenetreF extends JFrame implements IFenetre {
 		return listRobots;
 	}
 
-	
-	
-//	@Override
-//	public void paint(Graphics g) {
-////		g.setColor(Color.WHITE);
-//		
-//		panel.paint(g);
-////		g.fillRect(0, 40, 650, 600);
-//		for (IRobot robot : listRobots) {
-//			robot.paint(g);
-//		}
-//	}
-
-	// public static void main(String[] args) {
-	// FenetreF f = new FenetreF();
-	// }
 }

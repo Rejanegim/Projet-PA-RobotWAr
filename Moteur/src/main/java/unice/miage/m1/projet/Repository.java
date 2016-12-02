@@ -15,7 +15,13 @@ public class Repository {
 	private File base ;
 
 	public ArrayList<String> tableau = new ArrayList<String>();
-
+	
+	/**
+	 * Classe interne permettant de trouver 
+	 * tous les fichiers se terminant par
+	 * ".class" dans un repertoire donné.
+	 * 
+	 */
 	class MyFV extends SimpleFileVisitor {
 
 		public FileVisitResult visitFile(Object file, BasicFileAttributes attrs) throws IOException {
@@ -28,7 +34,10 @@ public class Repository {
 		}
 
 	}
-
+	/**
+	 * Constructeur de Repository
+	 * 
+	 */
 	public Repository(File base) {
 		this.base = base;
 		SimpleFileVisitor fichiersV = new MyFV();
@@ -39,7 +48,11 @@ public class Repository {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * Méthode permettant le
+	 * chargement de tous les fichier 
+	 * ".class" du répertoire.
+	 */
 	public List<Class<?>> load() throws ClassNotFoundException {
 		ArrayList<Class<?>> liste = new ArrayList<Class<?>>(tableau.size());
 		MyClassLoader mcl = new MyClassLoader();

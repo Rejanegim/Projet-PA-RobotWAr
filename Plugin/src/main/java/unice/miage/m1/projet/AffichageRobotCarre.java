@@ -4,59 +4,35 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
+public class AffichageRobotCarre implements IPluginGraphique {
 
-
-
-public class AffichageRobotCarre  implements IPluginGraphique {
-	
-//	private ArrayList<PluginRobot> listRobots;
-//	IFenetre fenetre; 
-//	int nbrobot  ;
-	
+	/**
+	 * Constructeur de la classe
+	 */
 	public AffichageRobotCarre() {
-//
-////		fenetre = new FenetreF();
-//		listRobots = new ArrayList();
-//		for (int i = 0; i < nbRobots; i++) {
-//			PluginRobot r1 = new PluginRobot();
-//
-//			listRobots.add(r1);
-//			}
-////			fenetre.setListeRobots(listRobots);
-		}
 
-	
-//	public IFenetre getFenetre() {
-//		return fenetre;
-//	}
-//
-//	public void setFenetre(IFenetre fenetre) {
-//		this.fenetre = fenetre;
-//	}
-	
-//	public int getNbrobot() {
-//		return nbrobot;
-//	}
+	}
 
-
-//	public void setNbrobot(int nbrobot) {  // peut être pour moteur
-//		this.nbrobot = nbrobot;
-//	}
-
-
-
+	/**
+	 * Methode permettant de dessiner les robots carrés
+	 */
 	public void paint(Graphics g, IRobot r) {
+		// Affichage du robot
 		Color c = r.getCouleur();
 		Point p = r.getPosition();
 		g.setColor(c);
-		//g.drawRect(p.x, p.y, 20, 20);
 		g.fillRect(p.x, p.y, 20, 20);
-		//g.fillOval(p.x, p.y, 20, 20);
-//			for (int i = 0; i < listRobots.size(); i++) {
-//				listRobots.get(i).paint(g);
-//			}
+		// Affichage de l'arme
+		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
+		g.drawLine(Math.round(p.x + 10), Math.round(p.y + 10),
+				Math.round(p.x + 20 * (float) Math.cos(capEnRadian) + 10),
+				Math.round(p.y + 20 * (float) Math.sin(capEnRadian) + 10));
+		// Affichage de la barre de vie
+		g.drawRect((int) (p.getX() - 20 / 2), (int) (p.getY() + 20 / 2 + 20), (int) 20, 5);
+		double barWidth = 20;
+		double barToFill = (barWidth / 100) * r.getVie();
+		;
+		g.fillRect((int) (p.getX() - 20 / 2 + 1), (int) (p.getY() + 20 / 2 + 1 + 20), (int) barToFill, 3);
 	}
-	
-
 
 }

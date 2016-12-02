@@ -30,11 +30,7 @@ public interface IRobot {
 	
 	public int getVie() ;
 
-	public void setPositionScore(int positionScore) ;
-	
-	public int getPositionScore() ;
-	
-	
+
 	
 
 }

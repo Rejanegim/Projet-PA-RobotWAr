@@ -46,9 +46,9 @@ public class MyClassLoader extends SecureClassLoader {
 		this.path.add(path);
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException {
-//		MyClassLoader mcl = new MyClassLoader();
-//		mcl.path.add(new File("/home/deptinfo/workspace/Chenille/bin/"));
-//		System.out.println(mcl.loadClass("Ellipse"));
-	}
+//	public static void main(String[] args) throws ClassNotFoundException {
+////		MyClassLoader mcl = new MyClassLoader();
+////		mcl.path.add(new File("/home/deptinfo/workspace/Chenille/bin/"));
+////		System.out.println(mcl.loadClass("Ellipse"));
+//	}
 }

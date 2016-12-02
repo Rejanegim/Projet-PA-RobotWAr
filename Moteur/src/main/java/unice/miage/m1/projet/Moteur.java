@@ -1,157 +1,37 @@
 package unice.miage.m1.projet;
 
 import java.awt.Graphics;
-import java.io.File;
-import java.lang.reflect.Constructor;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
-import javax.swing.JMenuBar;
 
-public class Moteur {
+
+public class Moteur implements Serializable {
 
 	/** Liste des robots */
 	private ArrayList<IRobot> listRobots;
 
 	/** Fenetre du jeu */
 	private FenetreF fenetre;
+	
 
-	// private JMenuBar menuBar;
-
-	public Moteur(int nbRobots, List<Class> l) throws ClassNotFoundException, InstantiationException,
-			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-
-		fenetre = new FenetreF();
-		listRobots = new ArrayList();
-
-		// Création des robots :
-		for (int i = 0; i < nbRobots; i++) {
-			// Création d'un robot
-			Robot r1 = new Robot();
-			for (int j = 0; j < l.size(); j++) {
-				if (l.get(j).getName().equals("unice.miage.m1.projet.DeplacementHorizontal")) {
-					Class<?> classe = l.get(j);
-					Constructor[] c = classe.getConstructors();
-					Constructor cons = c[0]; // on va dans un 1er temps supposé
-												// qu'il n'y qu'un seul
-												// constructeur
-					// get contstuctor
-					Object o = cons.newInstance();
-					// invoke
-					IPluginDeplacement truc = (IPluginDeplacement) o;
-					r1.setPluginDeplacement(truc);
-				}
-
-				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageRobot")) {
-					Class<?> cl = l.get(j);
-					Constructor[] c2 = cl.getConstructors();
-					Constructor cons2 = c2[0]; // on va dans un 1er
-												// temps supposé qu'il
-												// n'y qu'un seul
-												// constructeur
-					// get contstuctor
-
-					Object o2 = cons2.newInstance();
-					// invoke
-					IPluginGraphique truc2 = (IPluginGraphique) o2;
-					r1.setPluginGraphique(truc2);
-				}
-				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageArme")) {
-					Class<?> cl = l.get(j);
-					Constructor[] c2 = cl.getConstructors();
-					Constructor cons2 = c2[0]; // on va dans un 1er
-												// temps supposé qu'il
-												// n'y qu'un seul
-												// constructeur
-					// get contstuctor
-
-					Object o2 = cons2.newInstance();
-					// invoke
-					IPluginGraphique truc2 = (IPluginGraphique) o2;
-					r1.setPluginGraphique(truc2);
-				}
-				// Ajout du robot à la liste
-				listRobots.add(r1);
-
-			}
-			Robot r2 = new Robot();
-			for (int j = 0; j < l.size(); j++) {
-				if (l.get(j).getName().equals("unice.miage.m1.projet.PluginDeplacementAleatoire")) {
-					Class<?> classe = l.get(j);
-					Constructor[] c = classe.getConstructors();
-					Constructor cons = c[0]; // on va dans un 1er temps supposé
-												// qu'il n'y qu'un seul
-												// constructeur
-					// get contstuctor
-					Object o = cons.newInstance();
-					// invoke
-					IPluginDeplacement truc = (IPluginDeplacement) o;
-					r2.setPluginDeplacement(truc);
-				}
-
-				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageRobot")) {
-					Class<?> cl = l.get(j);
-					Constructor[] c2 = cl.getConstructors();
-					Constructor cons2 = c2[0]; // on va dans un 1er
-												// temps supposé qu'il
-												// n'y qu'un seul
-												// constructeur
-					// get contstuctor
-
-					Object o2 = cons2.newInstance();
-					// invoke
-					IPluginGraphique truc2 = (IPluginGraphique) o2;
-					r2.setPluginGraphique(truc2);
-				}
-				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageScore")) {
-					Class<?> cl = l.get(j);
-					Constructor[] c2 = cl.getConstructors();
-					Constructor cons2 = c2[0]; // on va dans un 1er
-												// temps supposé qu'il
-												// n'y qu'un seul
-												// constructeur
-					// get contstuctor
-
-					Object o2 = cons2.newInstance();
-					// invoke
-					IPluginGraphique truc2 = (IPluginGraphique) o2;
-					r2.setPluginGraphique(truc2);
-				}
-				if (l.get(j).getName().equals("unice.miage.m1.projet.AffichageArme")) {
-					Class<?> cl = l.get(j);
-					Constructor[] c2 = cl.getConstructors();
-					Constructor cons2 = c2[0]; // on va dans un 1er
-												// temps supposé qu'il
-												// n'y qu'un seul
-												// constructeur
-					// get contstuctor
-
-					Object o2 = cons2.newInstance();
-					// invoke
-					IPluginGraphique truc2 = (IPluginGraphique) o2;
-					r2.setPluginGraphique(truc2);
-				}
-				// Ajout du robot à la liste
-				listRobots.add(r2);
-
-			}
-
-			fenetre.setListeRobots(listRobots);
-
-		}
-
-		// Lancement du jeu
-
-	}
-
-	public Moteur() { // List<Class> l) {
+	/**
+	 * Constructeur de la classe Moteur.
+	 * Permet le lancement du jeu
+	 */
+	
+	public Moteur() { 
 		super();
 		this.fenetre = new FenetreF();
 		this.listRobots = fenetre.getListRobots();
 	}
 
+	/**
+	 * Méthode de gestion des tours.
+	 * 
+	 */
+	// Lancement du jeu
 	private void gestionDesTours(Graphics g) {
 		while (true) {
 			
@@ -165,11 +45,12 @@ public class Moteur {
 					robot.deplacement();
 					// // On demande au robot d'attaquer
 					robot.attaque();
+					// On demande à la fenetre de se repeindre 
 					fenetre.repaint();
 					}
 				}
 					try {
-						TimeUnit.MILLISECONDS.sleep(60);
+						TimeUnit.MILLISECONDS.sleep(100);
 
 					} catch (InterruptedException e) {
 						e.printStackTrace();
@@ -179,43 +60,11 @@ public class Moteur {
 
 	}
 
-	private void gestiondestours(Graphics g) {
-		while (true) {
-
-			// if (listRobots == fenetre.getListRobots()) {
-			
-				for (Iterator<IRobot> li = listRobots.iterator(); li.hasNext();) {
-					synchronized (listRobots) {
-					Robot robot = (Robot) li.next();
-					fenetre.repaint();
-					robot.paint(g);
-					robot.deplacement();
-					robot.attaque();
-				}
-				// Timer entre chaque tour d'un robot
-				try {
-					TimeUnit.MILLISECONDS.sleep(60);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-	}
-
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		// File fichier = new File("");
-		// String chemin = fichier.getAbsolutePath();
-		// chemin = chemin.replaceAll("Moteur", "Plugin" + File.separator +
-		// "target" + File.separator + "classes");
-		// File f = new File(chemin);
-		// Repository rep = new Repository(f);
-		// List l = rep.load();
 		Moteur moteur = new Moteur();
 		moteur.fenetre.setVisible(true);
 		Graphics g = moteur.fenetre.getGraphics();
-		// moteur.gestionDesTours(g);
 		moteur.gestionDesTours(g);
 	}
 }
