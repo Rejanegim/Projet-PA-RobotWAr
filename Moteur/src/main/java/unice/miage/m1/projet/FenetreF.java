@@ -52,13 +52,13 @@ public class FenetreF extends JFrame implements IFenetre {
 		panel.setPreferredSize(new Dimension(650, 600));
 		panel.setSize(650, 600);
 		panel.setBackground(Color.white);
-		this.getContentPane().add(panel);
+		this.getContentPane().add(panel, BorderLayout.CENTER);
 		JPanel control = new JPanel();
-	//	control.setSize(200,300);
+		control.setPreferredSize(new Dimension(300,500));
 		control.add(bouton);
 	    control.add(bouton2);
 	    control.add(bouton3);
-	    this.getContentPane().add(control, BorderLayout.EAST);
+	    this.getContentPane().add(control, BorderLayout.NORTH);
 //		this.getContentPane().add(bouton);
 //		this.getContentPane().add(bouton2);
 //		this.getContentPane().add(bouton3);
