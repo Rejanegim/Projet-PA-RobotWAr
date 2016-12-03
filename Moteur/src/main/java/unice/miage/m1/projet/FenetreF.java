@@ -1,5 +1,6 @@
 package unice.miage.m1.projet;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -22,6 +23,7 @@ public class FenetreF extends JFrame implements IFenetre {
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private JButton bouton = new JButton("Ajouter un Robot");
 	private JButton bouton2 = new JButton("Modifier un Robot");
+	private JButton bouton3 = new JButton("Ajouter un plugin");
 	public JPanel panel = new JPanel() {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
@@ -40,7 +42,7 @@ public class FenetreF extends JFrame implements IFenetre {
 		this.setTitle("RobotWar");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(1200, 700);
+		this.setSize(800, 700);
 		this.setResizable(false);
 		this.setBackground(Color.black);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -51,8 +53,15 @@ public class FenetreF extends JFrame implements IFenetre {
 		panel.setSize(650, 600);
 		panel.setBackground(Color.white);
 		this.getContentPane().add(panel);
-		this.getContentPane().add(bouton);
-		this.getContentPane().add(bouton2);
+		JPanel control = new JPanel();
+	//	control.setSize(200,300);
+		control.add(bouton);
+	    control.add(bouton2);
+	    control.add(bouton3);
+	    this.getContentPane().add(control, BorderLayout.EAST);
+//		this.getContentPane().add(bouton);
+//		this.getContentPane().add(bouton2);
+//		this.getContentPane().add(bouton3);
 		this.pack();
 		bouton.addActionListener(new ActionListener() {
 
@@ -86,9 +95,6 @@ public class FenetreF extends JFrame implements IFenetre {
 
 		});
 		bouton2.addActionListener(new ActionListener() {
-
-		
-
 			public List<Class> getList() throws ClassNotFoundException {
 				File fichier = new File("");
 				String chemin = fichier.getAbsolutePath().replaceAll("Moteur",
@@ -107,6 +113,15 @@ public class FenetreF extends JFrame implements IFenetre {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			}
+
+		});
+		bouton3.addActionListener(new ActionListener() {
+	
+			// Definit l'action du bouton
+			public void actionPerformed(ActionEvent arg0) {
+			AjouterPlugin ap = new AjouterPlugin(null, "Ajouter un plugin",true);
+			Robot robot = ap.afficher();
 			}
 
 		});
