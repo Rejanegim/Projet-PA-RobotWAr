@@ -35,6 +35,9 @@ public class AffichageRobotCercle implements IPluginGraphique {
 		double barToFill = (barWidth / 100) * r.getVie();
 		;
 		g.fillRect((int) (p.getX() - 20 / 2 + 1), (int) (p.getY() + 20 / 2 + 1 + 20), (int) barToFill, 3);
+		//Niveau de vie en nombre
+		String life =  Integer.toString(r.getVie()) ;
+		g.drawString(life,(int) (p.getX() - 20 / 2), (int) (p.getY() + 20 / 2 + 20));
 
 	}
 

@@ -118,6 +118,26 @@ public class Robot implements IRobot {
 	
 	 
 	
+	public IPluginGraphique getPluginsgraphique() {
+		return pluginsgraphique;
+	}
+
+
+	public void setPluginGraphique(IPluginGraphique pluginsgraphique) {
+		this.pluginsgraphique = pluginsgraphique;
+	}
+
+
+	public IPluginAttaque getPluginattaque() {
+		return pluginattaque;
+	}
+
+
+	public void setPluginattaque(IPluginAttaque pluginattaque) {
+		this.pluginattaque = pluginattaque;
+	}
+
+
 	public IPluginDeplacement getPluginDeplacement() {
 		return pluginDeplacement;
 	}
@@ -126,9 +146,6 @@ public class Robot implements IRobot {
 		this.pluginDeplacement = pluginDeplacement;
 	}
 	
-	public void setPluginGraphique(IPluginGraphique plugingraphique) {
-		this.pluginsgraphique =plugingraphique ;
-	}
 
 	public void paint(Graphics g) {
 		if (pluginsgraphique != null) {
@@ -147,4 +164,6 @@ public class Robot implements IRobot {
 	public void attaque() {
 
 	}
+
+
 }

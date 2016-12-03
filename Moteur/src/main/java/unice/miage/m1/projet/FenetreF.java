@@ -21,6 +21,7 @@ public class FenetreF extends JFrame implements IFenetre {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private JButton bouton = new JButton("Ajouter un Robot");
+	private JButton bouton2 = new JButton("Modifier un Robot");
 	public JPanel panel = new JPanel() {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
@@ -51,6 +52,7 @@ public class FenetreF extends JFrame implements IFenetre {
 		panel.setBackground(Color.white);
 		this.getContentPane().add(panel);
 		this.getContentPane().add(bouton);
+		this.getContentPane().add(bouton2);
 		this.pack();
 		bouton.addActionListener(new ActionListener() {
 
@@ -76,6 +78,31 @@ public class FenetreF extends JFrame implements IFenetre {
 							listRobots.add(list.get(i));
 						}
 					}
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		});
+		bouton2.addActionListener(new ActionListener() {
+
+		
+
+			public List<Class> getList() throws ClassNotFoundException {
+				File fichier = new File("");
+				String chemin = fichier.getAbsolutePath().replaceAll("Moteur",
+						"Plugin" + File.separator + "target" + File.separator + "classes");
+				File f = new File(chemin);
+				Repository rep = new Repository(f);
+				List l = rep.load();
+				return l;
+			}
+			// Definit l'action du bouton
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					ConfigurationRobot cr = new ConfigurationRobot(null, "Configurer votre Robot", true, this.getList(),FenetreF.this);
+					Robot robot = cr.afficherRobot();
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

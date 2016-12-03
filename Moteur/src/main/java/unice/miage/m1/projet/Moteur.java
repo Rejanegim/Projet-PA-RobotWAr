@@ -6,7 +6,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-
 public class Moteur implements Serializable {
 
 	/** Liste des robots */
@@ -14,14 +13,12 @@ public class Moteur implements Serializable {
 
 	/** Fenetre du jeu */
 	private FenetreF fenetre;
-	
 
 	/**
-	 * Constructeur de la classe Moteur.
-	 * Permet le lancement du jeu
+	 * Constructeur de la classe Moteur. Permet le lancement du jeu
 	 */
-	
-	public Moteur() { 
+
+	public Moteur() {
 		super();
 		this.fenetre = new FenetreF();
 		this.listRobots = fenetre.getListRobots();
@@ -34,28 +31,32 @@ public class Moteur implements Serializable {
 	// Lancement du jeu
 	private void gestionDesTours(Graphics g) {
 		while (true) {
-			
-				this.listRobots = fenetre.getListRobots();
-				// On parcourt la liste des robots
-				synchronized (listRobots) {
+
+			this.listRobots = fenetre.getListRobots();
+			// On parcourt la liste des robots
+			synchronized (listRobots) {
 				for (IRobot robot : listRobots) {
-					// On demande au robot de se dessiner
-					robot.paint(g);
-					// // On demande au robot de se déplacer
-					robot.deplacement();
-					// // On demande au robot d'attaquer
-					robot.attaque();
-					// On demande à la fenetre de se repeindre 
-					fenetre.repaint();
+					// Si un robot a une vie inférieure ou égale à 0, il est mort
+					// et on ne le dessine plus.
+					if (robot.getVie() > 0) {
+						// On demande au robot de se dessiner
+						robot.paint(g);
+						// // On demande au robot de se déplacer
+						robot.deplacement();
+						// // On demande au robot d'attaquer
+						robot.attaque();
+						// On demande à la fenetre de se repeindre
+						fenetre.repaint();
 					}
 				}
-					try {
-						TimeUnit.MILLISECONDS.sleep(100);
+			}
+			try {
+				TimeUnit.MILLISECONDS.sleep(500);
 
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-	
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
 		}
 
 	}

@@ -5,32 +5,40 @@ import java.awt.Graphics;
 import java.awt.Point;
 
 public interface IRobot {
-	
-	
+
 	public static final int xMax = 650; // abscisse maximun de la fenetre
 	public static final int yMax = 600; // ordonnee maximun de la fenetre
-	
+
 	public Point getPosition();
-	
-	public void setPosition(Point position) ;
+
+	public void setPosition(Point position);
 
 	public void paint(Graphics g);
-	
-	public Color getCouleur() ;
-	
-	public float getCap() ;
 
-	public void setCap(float cap) ;
-	  
+	public Color getCouleur();
+
+	public float getCap();
+
+	public void setCap(float cap);
+
 	public void tourner(float deltaC);
-	
+
 	public void deplacement();
-	
+
 	public void attaque();
-	
-	public int getVie() ;
 
+	public int getVie();
 
-	
+	public void setPluginDeplacement(IPluginDeplacement pluginDeplacement);
+
+	public void setPluginGraphique(IPluginGraphique plugingraphique);
+
+	public void setPluginattaque(IPluginAttaque pluginattaque);
+
+	public IPluginAttaque getPluginattaque();
+
+	public IPluginDeplacement getPluginDeplacement();
+
+	public IPluginGraphique getPluginsgraphique();
 
 }

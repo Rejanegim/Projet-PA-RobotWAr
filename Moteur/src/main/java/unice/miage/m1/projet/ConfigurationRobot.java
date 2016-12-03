@@ -18,24 +18,27 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ChoixRobot extends JDialog {
+public class ConfigurationRobot extends JDialog {
 	List<Class> plugins;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private Robot robot = new Robot();
 	private boolean sendData;
-	private JLabel graphique, deplacement, attaque;
-	private JComboBox mouve, attack, draw;
+	private JLabel robo, graphique, deplacement, attaque;
+	private JComboBox mouve, attack, draw, rob;
 	private IPluginDeplacement pluginDeplacement;
-	private IPluginGraphique pluginsgraphique ;
+	private IPluginGraphique pluginsgraphique;
 	private IPluginAttaque pluginattaque;
+	FenetreF fenetre;
 
 	/**
 	 * Constructeur de la classe
 	 */
-	public ChoixRobot(JFrame parent, String title, boolean modal, List<Class> l) {
+	public ConfigurationRobot(JFrame parent, String title, boolean modal, List<Class> l, FenetreF f) {
 		super(parent, title, modal);
 		this.plugins = l;
-		this.setSize(550, 400);
+		this.fenetre = f;
+		listRobots = f.getListRobots();
+		this.setSize(600, 500);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
@@ -51,18 +54,34 @@ public class ChoixRobot extends JDialog {
 		return this.robot;
 	}
 
-	public ArrayList<IRobot> getListRobots() {
-		return listRobots;
-	}
-
-	public void setListRobots(ArrayList<IRobot> listRobots) {
-		this.listRobots = listRobots;
-	}
+	// public ArrayList<IRobot> getListRobots() {
+	// return listRobots;
+	// }
+	//
+	// public void setListRobots(ArrayList<IRobot> listRobots) {
+	// this.listRobots = listRobots;
+	// }
 
 	/**
 	 * Dessine les éléments de la boite de dialogue
 	 */
 	private void initComponent() {
+
+		// Les Robots
+		JPanel choixRobot = new JPanel();
+		choixRobot.setBackground(Color.white);
+		choixRobot.setPreferredSize(new Dimension(440, 100));
+		choixRobot.setBorder(BorderFactory.createTitledBorder("Le Robot"));
+		rob = new JComboBox();
+
+		for (int i = 0; i < listRobots.size(); i++) {
+			String str = Integer.toString(i+1);
+			rob.addItem(str);
+		}
+
+		robo = new JLabel("Modifier le robot n°: ");
+		choixRobot.add(robo);
+		choixRobot.add(rob);
 
 		// Le graphisme
 		JPanel choixGraphisme = new JPanel();
@@ -81,8 +100,7 @@ public class ChoixRobot extends JDialog {
 		graphique = new JLabel("Deplacement : ");
 		choixGraphisme.add(graphique);
 		choixGraphisme.add(draw);
-		
-		
+
 		// Le déplacement
 		JPanel choixDeplacement = new JPanel();
 		choixDeplacement.setBackground(Color.white);
@@ -121,13 +139,14 @@ public class ChoixRobot extends JDialog {
 
 		JPanel content = new JPanel();
 		content.setBackground(Color.white);
-
+		
+		content.add(choixRobot);
 		content.add(choixGraphisme);
 		content.add(choixDeplacement);
 		content.add(choixAttaque);
 
 		JPanel control = new JPanel();
-		JButton boutonRobot = new JButton("Créer le Robot");
+		JButton boutonRobot = new JButton("Modifier le Robot");
 
 		boutonRobot.addActionListener(new ActionListener() {
 
@@ -145,7 +164,7 @@ public class ChoixRobot extends JDialog {
 						try {
 							o = cons.newInstance();
 							// invoke
-							pluginsgraphique  = (IPluginGraphique) o;
+							pluginsgraphique = (IPluginGraphique) o;
 						} catch (InstantiationException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -218,15 +237,22 @@ public class ChoixRobot extends JDialog {
 
 					}
 				}
+				String str1 = (String) rob.getSelectedItem();
+				int int1 =  Integer.parseInt(str1)-1 ;
+				IRobot robot1= listRobots.get(int1);
+				robot1.setPluginattaque(pluginattaque);
+				robot1.setPluginDeplacement(pluginDeplacement);
+				robot1.setPluginGraphique(pluginsgraphique);
 
-				IRobot rb = new Robot(pluginDeplacement, pluginsgraphique, pluginattaque);
-				synchronized (listRobots) {
-					listRobots.add(rb);
-				}
-				setVisible(false);
+//				IRobot rb = new Robot(pluginDeplacement, pluginsgraphique, pluginattaque);
+//				synchronized (listRobots) {
+//					listRobots.add(rb);
+//				}
+		
 				
-			}
+				setVisible(false);
 
+			}
 
 		});
 
