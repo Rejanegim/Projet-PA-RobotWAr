@@ -17,7 +17,7 @@ public interface IRobot {
 	public void paint(Graphics g);
 
 	public Color getCouleur();
-	
+
 	public void setCouleur(Color c);
 
 	public float getCap();
@@ -31,6 +31,8 @@ public interface IRobot {
 	public void attaque(ArrayList<IRobot> listRobots);
 
 	public int getVie();
+
+	public void setVie(int vie);
 
 	public void setPluginDeplacement(IPluginDeplacement pluginDeplacement);
 
