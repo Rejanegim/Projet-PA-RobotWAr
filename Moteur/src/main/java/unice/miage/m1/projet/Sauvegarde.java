@@ -2,6 +2,8 @@ package unice.miage.m1.projet;
 
 
 
+import java.awt.Color;
+import java.awt.Point;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -79,12 +81,11 @@ public class Sauvegarde implements Serializable{
 				oos.writeObject(listeRobots) ; 
 				for (int i = 0; i <listeRobots.size(); i++) {
 					oos.writeObject(listeRobots.get(i));
-//					oos.writeObject(listeRobots.get(i).getPluginsgraphique());
-//					oos.writeObject(listeRobots.get(i).getPluginattaque());
-//					oos.writeObject(listeRobots.get(i).getPluginDeplacement());
-//					oos.writeObject(listeRobots.get(i).getCouleur());
-//					oos.writeObject(listeRobots.get(i).getPosition());
-//					oos.writeObject(listeRobots.get(i).getCap()); //Pas nécessaire? 
+					oos.writeObject(listeRobots.get(i).getPluginsgraphique());
+					oos.writeObject(listeRobots.get(i).getPluginattaque());
+					oos.writeObject(listeRobots.get(i).getPluginDeplacement());
+					oos.writeObject(listeRobots.get(i).getCouleur());
+					oos.writeObject(listeRobots.get(i).getPosition()); //Pas nécessaire? 
 				}
 				oos.flush();
 			} catch (final java.io.IOException e) {
@@ -131,15 +132,24 @@ public class Sauvegarde implements Serializable{
 				final FileInputStream fichier = new FileInputStream(chooser.getSelectedFile());
 				ois = new ObjectInputStream(fichier);
 				final ArrayList<IRobot> listeRobots = (ArrayList<IRobot>) ois.readObject();
-				IRobot robot = (IRobot) ois.readObject() ; 
+				// robot = (IRobot) ois.readObject() ; 
+				for (int j = 0; j < listeRobots.size(); j++) {
+					IPluginAttaque attack = (IPluginAttaque) ois.readObject();
+					IPluginGraphique drawing = (IPluginGraphique) ois.readObject();
+					IPluginDeplacement moving = (IPluginDeplacement) ois.readObject();
+					Point position = (Point) ois.readObject();
+					Color color = (Color) ois.readObject();
+					listeRobots.get(j).setPosition(position);
+					listeRobots.get(j).setCouleur(color);
+					listeRobots.get(j).setPluginGraphique(drawing);
+					listeRobots.get(j).setPluginattaque(attack);
+					listeRobots.get(j).setPluginDeplacement(moving);
+
+				}
 				jeu.getFenetre().setVisible(false);
 				this.jeu = new Moteur() ;
 				jeu.setListRobots( listeRobots);
-//				for (int i = 0; i < listeRobots.size(); i++) {
-//					listeRobots.get(i).paint(fenetre.getGraphics());
-//					listeRobots.get(i).deplacement();
-//					listeRobots.get(i).attaque();
-//				}
+
 
 			} catch (final java.io.IOException e) {
 				e.printStackTrace();
