@@ -1,9 +1,14 @@
 package unice.miage.m1.projet;
 
 import java.awt.Point;
+import java.io.Serializable;
 
-public class DeplacementVertical implements IPluginDeplacement {
+public class DeplacementVertical implements IPluginDeplacement, Serializable  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3144661676662879061L;
 	// le cap doit être soit 90 soit -90 pour un déplacement vertical
 	int angle = 90 ;
 

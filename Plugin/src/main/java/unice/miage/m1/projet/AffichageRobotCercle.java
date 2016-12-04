@@ -3,8 +3,14 @@ package unice.miage.m1.projet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.io.Serializable;
 
-public class AffichageRobotCercle implements IPluginGraphique {
+public class AffichageRobotCercle implements IPluginGraphique, Serializable  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2979470404036378632L;
+
 	/**
 	 * Constructeur de la classe
 	 */

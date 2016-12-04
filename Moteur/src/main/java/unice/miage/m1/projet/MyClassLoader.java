@@ -1,7 +1,6 @@
 package unice.miage.m1.projet;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.security.SecureClassLoader;
@@ -29,8 +28,7 @@ public class MyClassLoader extends SecureClassLoader {
 		byte[] byt = null;
 		for (int i = 0; i < path.size(); i++) {
 			if (path.get(i).isDirectory()) {
-				File fi = new File(path.get(i), nameFile);// obtenir le chemin//
-															// absolue
+				File fi = new File(path.get(i), nameFile);// obtenir le chemin//										// absolue
 				byt = Files.readAllBytes(fi.toPath());
 			}
 		}
@@ -45,10 +43,10 @@ public class MyClassLoader extends SecureClassLoader {
 	public void setPath(File path) {
 		this.path.add(path);
 	}
-
+//
 //	public static void main(String[] args) throws ClassNotFoundException {
-////		MyClassLoader mcl = new MyClassLoader();
-////		mcl.path.add(new File("/home/deptinfo/workspace/Chenille/bin/"));
-////		System.out.println(mcl.loadClass("Ellipse"));
+//		MyClassLoader mcl = new MyClassLoader();
+//		mcl.path.add(new File("/home/deptinfo/workspace/Chenille/bin/"));
+//		System.out.println(mcl.loadClass("Ellipse"));
 //	}
 }

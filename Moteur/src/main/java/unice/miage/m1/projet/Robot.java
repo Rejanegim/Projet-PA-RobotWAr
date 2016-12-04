@@ -3,9 +3,14 @@ package unice.miage.m1.projet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.io.Serializable;
 
 
-public class Robot implements IRobot {
+public class Robot implements IRobot, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5373056699235984307L;
 	private int vie;
 	private Color couleur;
 	private int vitesse;
@@ -27,7 +32,7 @@ public class Robot implements IRobot {
 		// Nombre de points de vie d'un robot
 		vie = 100;
 
-		vitesse = 10;
+		vitesse = 15;
 
 		// Couleur aléatoire du robot
 		float randomr = (float) (Math.random()); // opacite de la couleur rouge

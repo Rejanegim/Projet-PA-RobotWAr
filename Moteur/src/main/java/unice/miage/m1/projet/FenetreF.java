@@ -22,8 +22,10 @@ public class FenetreF extends JFrame implements IFenetre {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private JButton bouton = new JButton("Ajouter un Robot");
+	private JButton bouton1 = new JButton("Sauvegarde");
 	private JButton bouton2 = new JButton("Modifier un Robot");
 	private JButton bouton3 = new JButton("Ajouter un plugin");
+	private JButton bouton4 = new JButton("Charger une partie");
 	public JPanel panel = new JPanel() {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
@@ -54,15 +56,17 @@ public class FenetreF extends JFrame implements IFenetre {
 		panel.setBackground(Color.white);
 		this.getContentPane().add(panel, BorderLayout.CENTER);
 		JPanel control = new JPanel();
-		control.setPreferredSize(new Dimension(300,500));
+		control.setPreferredSize(new Dimension(300,200));
+		control.add(bouton4);
 		control.add(bouton);
 	    control.add(bouton2);
+		control.add(bouton1);
 	    control.add(bouton3);
 	    this.getContentPane().add(control, BorderLayout.NORTH);
-//		this.getContentPane().add(bouton);
-//		this.getContentPane().add(bouton2);
-//		this.getContentPane().add(bouton3);
 		this.pack();
+		
+		
+		
 		bouton.addActionListener(new ActionListener() {
 
 			public List<Class> getList() throws ClassNotFoundException {
@@ -120,12 +124,20 @@ public class FenetreF extends JFrame implements IFenetre {
 	
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
-			AjouterPlugin ap = new AjouterPlugin(null, "Ajouter un plugin",true);
+			AjouterPlugin ap = new AjouterPlugin(null, "Ajouter un Plugin",true);
 			Robot robot = ap.afficher();
 			}
 
 		});
 		this.setVisible(true);
+	}
+
+	public JButton getBouton1() {
+		return bouton1;
+	}
+
+	public void setBouton1(JButton bouton1) {
+		this.bouton1 = bouton1;
 	}
 
 	public void setListeRobots(ArrayList<IRobot> listRobots) {
@@ -136,4 +148,14 @@ public class FenetreF extends JFrame implements IFenetre {
 		return listRobots;
 	}
 
+	public JButton getBouton4() {
+		return bouton4;
+	}
+
+	public void setBouton4(JButton bouton4) {
+		this.bouton4 = bouton4;
+	}
+
+	
+	
 }

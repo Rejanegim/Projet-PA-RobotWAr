@@ -60,7 +60,6 @@ public class Repository {
 		for (int i = 0; i < tableau.size(); i++) {
 			String s = tableau.get(i).replaceAll(".class", "");
 			s = s.replace(File.separator, ".");
-			System.out.println(s);
 			mcl.setPath(this.base);
 			liste.add(mcl.loadClass(s));
 

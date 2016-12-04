@@ -1,8 +1,14 @@
 package unice.miage.m1.projet;
 
 import java.awt.Point;
+import java.io.Serializable;
 
-public class DeplacementAleatoire implements IPluginDeplacement {
+public class DeplacementAleatoire implements IPluginDeplacement, Serializable  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -563772452075366746L;
+
 	/**
 	 * Constructeur de la classe
 	 */
