@@ -132,6 +132,7 @@ public class Sauvegarde implements Serializable{
 				ois = new ObjectInputStream(fichier);
 				final ArrayList<IRobot> listeRobots = (ArrayList<IRobot>) ois.readObject();
 				IRobot robot = (IRobot) ois.readObject() ; 
+				jeu.getFenetre().setVisible(false);
 				this.jeu = new Moteur() ;
 				jeu.setListRobots( listeRobots);
 //				for (int i = 0; i < listeRobots.size(); i++) {

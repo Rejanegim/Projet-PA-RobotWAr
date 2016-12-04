@@ -9,6 +9,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,13 +17,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class FenetreF extends JFrame implements IFenetre {
+public class FenetreF extends JFrame implements IFenetre, Serializable {
 
 	
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3040386503625507313L;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private JButton bouton = new JButton("Ajouter un Robot");
-	private JButton bouton1 = new JButton("Sauvegarde");
+	private JButton bouton1 = new JButton("Sauvegarde la partie");
 	private JButton bouton2 = new JButton("Modifier un Robot");
 	private JButton bouton3 = new JButton("Ajouter un plugin");
 	private JButton bouton4 = new JButton("Charger une partie");
@@ -56,7 +60,7 @@ public class FenetreF extends JFrame implements IFenetre {
 		panel.setBackground(Color.white);
 		this.getContentPane().add(panel, BorderLayout.CENTER);
 		JPanel control = new JPanel();
-		control.setPreferredSize(new Dimension(300,200));
+		control.setPreferredSize(new Dimension(200,300));
 		control.add(bouton4);
 		control.add(bouton);
 	    control.add(bouton2);

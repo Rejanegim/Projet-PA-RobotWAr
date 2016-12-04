@@ -2,6 +2,7 @@ package unice.miage.m1.projet;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -10,7 +11,12 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Repository {
+public class Repository implements  Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2807021015360468260L;
 
 	private File base ;
 

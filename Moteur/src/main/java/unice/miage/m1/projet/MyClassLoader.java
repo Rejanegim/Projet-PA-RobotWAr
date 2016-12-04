@@ -2,11 +2,16 @@ package unice.miage.m1.projet;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.security.SecureClassLoader;
 import java.util.ArrayList;
 
-public class MyClassLoader extends SecureClassLoader {
+public class MyClassLoader extends SecureClassLoader implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7169761967649553847L;
 	private ArrayList<File> path = new ArrayList<File>();
 
 	@Override

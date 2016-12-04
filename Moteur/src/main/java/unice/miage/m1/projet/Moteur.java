@@ -23,8 +23,10 @@ public class Moteur implements Serializable {
 	/** Fenetre du jeu */
 	private FenetreF fenetre;
 
+	/** Bouton de sauvegarde */
 	private JButton buttonsave;
 	
+	/** Bouton  pour reprendre une partie */
 	private JButton buttonload; 
 	
 	public void sauvegarde() {
