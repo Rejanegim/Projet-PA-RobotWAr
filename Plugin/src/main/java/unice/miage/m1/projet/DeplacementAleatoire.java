@@ -34,7 +34,7 @@ public class DeplacementAleatoire implements IPluginDeplacement, Serializable  {
 		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
 		Point p = r.getPosition();
 		if (this.auBord(r)) {
-			r.setCap(-angle);
+			r.tourner(270);
 			float capEnRadian2 = r.getCap() * (float) (Math.PI / 180);
 			p.x = (int) (p.x +vitesse * (float) Math.cos(capEnRadian2));
 			p.y = (int) (p.y + vitesse * (float) Math.sin(capEnRadian2));
