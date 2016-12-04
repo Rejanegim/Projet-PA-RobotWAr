@@ -17,6 +17,8 @@ public interface IRobot {
 	public void paint(Graphics g);
 
 	public Color getCouleur();
+	
+	public void setCouleur(Color c);
 
 	public float getCap();
 
