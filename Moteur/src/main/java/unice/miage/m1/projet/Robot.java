@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.io.Serializable;
-
+import java.util.ArrayList;
 
 public class Robot implements IRobot, Serializable {
 	/**
@@ -15,20 +15,18 @@ public class Robot implements IRobot, Serializable {
 	private Color couleur;
 	private int vitesse;
 	private Point position;
-	private float cap ; 
-	
-	
-	
+	private float cap;
+
 	/** plugin deplacement */
 	private IPluginDeplacement pluginDeplacement;
-	private  IPluginGraphique pluginsgraphique ; 
-	private IPluginAttaque pluginattaque ;
-	
+	private IPluginGraphique pluginsgraphique;
+	private IPluginAttaque pluginattaque;
+
 	/**
 	 * Constructeur de Robot
 	 * 
 	 */
-	public Robot(IPluginDeplacement d,  IPluginGraphique g, IPluginAttaque a) {
+	public Robot(IPluginDeplacement d, IPluginGraphique g, IPluginAttaque a) {
 		// Nombre de points de vie d'un robot
 		vie = 100;
 
@@ -42,19 +40,17 @@ public class Robot implements IRobot, Serializable {
 		couleur = new Color(randomr, randomv, randomb);
 
 		// Position aléatoire du robot
-		int x = (int) (Math.random() * 500)+50;
-		int y = (int) (Math.random() * 500)+50;
+		int x = (int) (Math.random() * 500) + 50;
+		int y = (int) (Math.random() * 500) + 50;
 		position = new Point(x, y);
 
 		// Récupération du plugin permettant de déplacer le robot
-		 pluginDeplacement = d;
-		 pluginsgraphique = g; 
-		 pluginattaque = a ;
-		 
-	
+		pluginDeplacement = d;
+		pluginsgraphique = g;
+		pluginattaque = a;
+
 	}
 
-	
 	/**
 	 * Constructeur de Robot
 	 * 
@@ -77,7 +73,6 @@ public class Robot implements IRobot, Serializable {
 		position = new Point(x, y);
 
 	}
-
 
 	public int getVie() {
 		return vie;
@@ -110,6 +105,7 @@ public class Robot implements IRobot, Serializable {
 	public void setPosition(Point position) {
 		this.position = position;
 	}
+
 	public float getCap() {
 		return cap;
 	}
@@ -117,31 +113,26 @@ public class Robot implements IRobot, Serializable {
 	public void setCap(float cap) {
 		this.cap = cap;
 	}
-	  public void tourner(float deltaC) {
-			this.cap = this.getCap() + deltaC;
-		}
-	
-	 
-	
+
+	public void tourner(float deltaC) {
+		this.cap = this.getCap() + deltaC;
+	}
+
 	public IPluginGraphique getPluginsgraphique() {
 		return pluginsgraphique;
 	}
-
 
 	public void setPluginGraphique(IPluginGraphique pluginsgraphique) {
 		this.pluginsgraphique = pluginsgraphique;
 	}
 
-
 	public IPluginAttaque getPluginattaque() {
 		return pluginattaque;
 	}
 
-
 	public void setPluginattaque(IPluginAttaque pluginattaque) {
 		this.pluginattaque = pluginattaque;
 	}
-
 
 	public IPluginDeplacement getPluginDeplacement() {
 		return pluginDeplacement;
@@ -150,25 +141,24 @@ public class Robot implements IRobot, Serializable {
 	public void setPluginDeplacement(IPluginDeplacement pluginDeplacement) {
 		this.pluginDeplacement = pluginDeplacement;
 	}
-	
 
 	public void paint(Graphics g) {
 		if (pluginsgraphique != null) {
-		this.pluginsgraphique.paint(g, this);
+			this.pluginsgraphique.paint(g, this);
 		}
 	}
 
 	public void deplacement() {
 		// position = pluginDeplacement.deplacement(this);
 		if (pluginDeplacement != null) {
-			position = pluginDeplacement.deplacement(this,vitesse);
+			position = pluginDeplacement.deplacement(this, vitesse);
 		}
 	}
-	  
-	
-	public void attaque() {
 
+	public void attaque(ArrayList<IRobot> listRobots) {
+		if (pluginattaque != null) {
+			pluginattaque.attaque(this, listRobots);
+		}
 	}
-
 
 }

@@ -98,7 +98,7 @@ public class Moteur implements Serializable {
 						// // On demande au robot de se déplacer
 						robot.deplacement();
 						// // On demande au robot d'attaquer
-						robot.attaque();
+						robot.attaque(listRobots);
 						// On demande à la fenetre de se repeindre
 						fenetre.repaint();
 					}

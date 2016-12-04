@@ -3,6 +3,7 @@ package unice.miage.m1.projet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.ArrayList;
 
 public interface IRobot {
 
@@ -25,7 +26,7 @@ public interface IRobot {
 
 	public void deplacement();
 
-	public void attaque();
+	public void attaque(ArrayList<IRobot> listRobots);
 
 	public int getVie();
 
