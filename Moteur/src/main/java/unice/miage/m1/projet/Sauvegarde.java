@@ -1,7 +1,5 @@
 package unice.miage.m1.projet;
 
-
-
 import java.awt.Color;
 import java.awt.Point;
 import java.io.File;
@@ -12,13 +10,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileSystemView;
 
-//import gui.ChoosePluginFrame;
+
 import unice.miage.m1.projet.*;
 
 
@@ -132,23 +130,26 @@ public class Sauvegarde implements Serializable{
 				final FileInputStream fichier = new FileInputStream(chooser.getSelectedFile());
 				ois = new ObjectInputStream(fichier);
 				final ArrayList<IRobot> listeRobots = (ArrayList<IRobot>) ois.readObject();
-				// robot = (IRobot) ois.readObject() ; 
+				IRobot robot = (IRobot) ois.readObject() ; 
 				for (int j = 0; j < listeRobots.size(); j++) {
-					IPluginAttaque attack = (IPluginAttaque) ois.readObject();
 					IPluginGraphique drawing = (IPluginGraphique) ois.readObject();
+					IPluginAttaque attack = (IPluginAttaque) ois.readObject();
 					IPluginDeplacement moving = (IPluginDeplacement) ois.readObject();
-					Point position = (Point) ois.readObject();
 					Color color = (Color) ois.readObject();
+					Point position = (Point) ois.readObject();
 					listeRobots.get(j).setPosition(position);
 					listeRobots.get(j).setCouleur(color);
 					listeRobots.get(j).setPluginGraphique(drawing);
 					listeRobots.get(j).setPluginattaque(attack);
 					listeRobots.get(j).setPluginDeplacement(moving);
-
+					listeRobots.get(j).paint(jeu.getFenetre().getGraphics());
+					listeRobots.get(j).deplacement();
+					listeRobots.get(j).attaque(listeRobots);
 				}
-				jeu.getFenetre().setVisible(false);
-				this.jeu = new Moteur() ;
-				jeu.setListRobots( listeRobots);
+			
+				jeu.getFenetre().setListeRobots(listeRobots);
+				jeu.setListRobots(listeRobots);
+				
 
 
 			} catch (final java.io.IOException e) {
