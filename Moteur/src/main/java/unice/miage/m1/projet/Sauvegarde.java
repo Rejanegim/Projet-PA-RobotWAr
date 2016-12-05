@@ -19,26 +19,24 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileSystemView;
 
-
 import unice.miage.m1.projet.*;
 
-
 /**
- * Classe permettant de gerer la persistance, 
- * soit la sauvegarde et la restauration
+ * Classe permettant de gerer la persistance, soit la sauvegarde et la
+ * restauration
  */
-public class Sauvegarde implements Serializable{
+public class Sauvegarde implements Serializable {
 	private static final String FILE_EXTENSION = ".rw";
 
 	private Moteur jeu;
-	ArrayList<IRobot> localist;
+	ArrayList<IRobot> localist = new ArrayList<IRobot>();
 	List<Class> plugins;
-	IPluginGraphique draw ;
+	IPluginGraphique draw;
 	IPluginDeplacement move;
-	IPluginAttaque kick ; 
-	
+	IPluginAttaque kick;
+
 	/**
-	 * Constructeur 
+	 * Constructeur
 	 * 
 	 * @param gui
 	 */
@@ -49,16 +47,14 @@ public class Sauvegarde implements Serializable{
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			localist= new ArrayList<IRobot>() ;
+
 		}
 	}
 
-	
 	/**
-	 * Methode permettant de 
-	 * sauvegarder l'etat de jeu
-	 */	
-	
+	 * Methode permettant de sauvegarder l'etat de jeu
+	 */
+
 	public void save() {
 		JFileChooser chooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		chooser.setDialogTitle("Emplacement de la sauvegarde");
@@ -69,37 +65,36 @@ public class Sauvegarde implements Serializable{
 			public String getDescription() {
 				return FILE_EXTENSION;
 			}
-			
+
 			@Override
 			public boolean accept(File f) {
 				return f.getName().endsWith(FILE_EXTENSION);
-		}
-			});
-		
-		FenetreF fenetre= jeu.getFenetre() ;
-//		
+			}
+		});
+
+		FenetreF fenetre = jeu.getFenetre();
+		//
 		if (chooser.showSaveDialog(fenetre) == JFileChooser.APPROVE_OPTION) {
-//
+			//
 			ObjectOutputStream oos = null;
 
 			try {
 				String path = chooser.getSelectedFile().getAbsolutePath();
-				if (!path.endsWith(FILE_EXTENSION))
-				{
-					path+=FILE_EXTENSION;
+				if (!path.endsWith(FILE_EXTENSION)) {
+					path += FILE_EXTENSION;
 				}
 				final FileOutputStream fichier = new FileOutputStream(new File(path));
 				oos = new ObjectOutputStream(fichier);
 				ArrayList<IRobot> listeRobots = jeu.getListRobots();
 				oos.writeObject(listeRobots.size());
-				//oos.writeObject(listeRobots) ; 
-				for (int i = 0; i <listeRobots.size(); i++) {
-				//	oos.writeObject(listeRobots.get(i));
+				// oos.writeObject(listeRobots) ;
+				for (int i = 0; i < listeRobots.size(); i++) {
+					// oos.writeObject(listeRobots.get(i));
 					oos.writeObject(listeRobots.get(i).getPluginsgraphique().getClass().getName());
 					oos.writeObject(listeRobots.get(i).getPluginattaque().getClass().getName());
 					oos.writeObject(listeRobots.get(i).getPluginDeplacement().getClass().getName());
 					oos.writeObject(listeRobots.get(i).getCouleur());
-					oos.writeObject(listeRobots.get(i).getPosition()); 
+					oos.writeObject(listeRobots.get(i).getPosition());
 				}
 				oos.flush();
 			} catch (final java.io.IOException e) {
@@ -118,9 +113,9 @@ public class Sauvegarde implements Serializable{
 		}
 
 	}
+
 	/**
-	 * Methode permettant la restauration
-	 * d'un etat de jeu sauvegardé
+	 * Methode permettant la restauration d'un etat de jeu sauvegardé
 	 */
 	public void load() {
 		// Construction de l'interface
@@ -139,17 +134,15 @@ public class Sauvegarde implements Serializable{
 				return f.getName().endsWith(FILE_EXTENSION);
 			}
 		});
-		FenetreF fenetre= jeu.getFenetre() ;
+		FenetreF fenetre = jeu.getFenetre();
 		if (chooser.showOpenDialog(fenetre) == JFileChooser.APPROVE_OPTION) {
 			ObjectInputStream ois = null;
 			try {
 				final FileInputStream fichier = new FileInputStream(chooser.getSelectedFile());
 				ois = new ObjectInputStream(fichier);
-			//	final ArrayList<Class<?>> listeRobots = (ArrayList<Class<?>> ) ois.readObject();
-		//		Class<?> robot = (Class<?>)  ois.readObject() ; 
-				int length = (Integer) ois.readObject() ;
+				int length = (Integer) ois.readObject();
 				for (int j = 0; j < length; j++) {
-					String drawing = (String)  ois.readObject();
+					String drawing = (String) ois.readObject();
 					for (int k = 0; k < plugins.size(); k++) {
 						if (plugins.get(k).getName().equals(drawing)) {
 							Class<?> classe = plugins.get(k);
@@ -175,7 +168,7 @@ public class Sauvegarde implements Serializable{
 							}
 						}
 					}
-					String attack =(String)  ois.readObject();
+					String attack = (String) ois.readObject();
 					for (int k = 0; k < plugins.size(); k++) {
 						if (plugins.get(k).getName().equals(attack)) {
 							Class<?> classe = plugins.get(k);
@@ -201,7 +194,7 @@ public class Sauvegarde implements Serializable{
 							}
 						}
 					}
-					String moving = (String)  ois.readObject();
+					String moving = (String) ois.readObject();
 					for (int k = 0; k < plugins.size(); k++) {
 						if (plugins.get(k).getName().equals(moving)) {
 							Class<?> classe = plugins.get(k);
@@ -229,24 +222,18 @@ public class Sauvegarde implements Serializable{
 					}
 					Color color = (Color) ois.readObject();
 					Point position = (Point) ois.readObject();
-					ArrayList<IRobot> listeRobots = new ArrayList<IRobot>();
-					for (int i = 0; i < length ; i++) {
-					Robot robot = new Robot(move,draw,kick);
-					robot.setPosition(position);
-					robot.setCouleur(color);
-					robot.paint(jeu.getFenetre().getGraphics());
-					robot.deplacement();
-					robot.attaque(jeu.getFenetre().getListRobots());
-					listeRobots.add(robot);
-					}
-					localist= listeRobots ;
-					System.out.println(localist);
+						Robot robot = new Robot(move, draw, kick);
+						robot.setPosition(position);
+						robot.setCouleur(color);
+						robot.paint(jeu.getFenetre().getGraphics());
+						robot.deplacement();
+						robot.attaque(jeu.getFenetre().getListRobots());
+						localist.add(robot);
+	
 				}
-			
+
 				jeu.getFenetre().setListeRobots(localist);
 				jeu.setListRobots(localist);
-				
-
 
 			} catch (final java.io.IOException e) {
 				e.printStackTrace();
@@ -263,8 +250,5 @@ public class Sauvegarde implements Serializable{
 			}
 		}
 	}
-
-
-
 
 }
