@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ChoixRobot extends JDialog {
+public class ChoixRobot extends JDialog implements Serializable {
 	List<Class> plugins;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private Robot robot = new Robot();
@@ -136,10 +137,7 @@ public class ChoixRobot extends JDialog {
 					if (plugins.get(j).getName().equals("unice.miage.m1.projet." + draw.getSelectedItem())) {
 						Class<?> classe = plugins.get(j);
 						Constructor[] c = classe.getConstructors();
-						Constructor cons = c[0]; // on va dans un 1er temps
-													// supposé
-													// qu'il n'y qu'un seul
-													// constructeur
+						Constructor cons = c[0]; // il n'y a qu'un constructeur
 						// get contstuctor
 						Object o;
 						try {

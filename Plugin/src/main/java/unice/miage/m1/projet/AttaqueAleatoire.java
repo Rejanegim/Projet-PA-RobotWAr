@@ -28,7 +28,7 @@ public class AttaqueAleatoire implements IPluginAttaque, Serializable {
 
 			// Si les robots sont proche
 			if (distance < 100) {
-				System.out.println("Attaque");
+				
 
 				// On récupère la vie de l'autre robot
 				int vieAutreRobot = autreRobot.getVie();

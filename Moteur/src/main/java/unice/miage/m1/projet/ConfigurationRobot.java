@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ConfigurationRobot extends JDialog {
+public class ConfigurationRobot extends JDialog implements Serializable {
 	List<Class> plugins;
 	private ArrayList<IRobot> listRobots = new ArrayList<IRobot>();
 	private Robot robot = new Robot();

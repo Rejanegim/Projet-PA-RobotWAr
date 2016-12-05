@@ -39,6 +39,18 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 		}
 	};
 	
+	
+	public List<Class> getList() throws ClassNotFoundException {
+		File fichier = new File("");
+		String chemin = fichier.getAbsolutePath().replaceAll("Moteur",
+				"Plugin" + File.separator + "target" + File.separator + "classes");
+		File f = new File(chemin);
+		Repository rep = new Repository(f);
+		List l = rep.load();
+		return l;
+	}
+	
+	
 	/**
 	 * Contructeur de FenetreF.
 	 * Met en place tous les éléments de
@@ -70,24 +82,15 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 		this.pack();
 		
 		
-		
 		bouton.addActionListener(new ActionListener() {
 
-			public List<Class> getList() throws ClassNotFoundException {
-				File fichier = new File("");
-				String chemin = fichier.getAbsolutePath().replaceAll("Moteur",
-						"Plugin" + File.separator + "target" + File.separator + "classes");
-				File f = new File(chemin);
-				Repository rep = new Repository(f);
-				List l = rep.load();
-				return l;
-			}
+		
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					ChoixRobot cr = new ChoixRobot(null, "Créez votre Robot", true, this.getList());
+					ChoixRobot cr = new ChoixRobot(null, "Créez votre Robot", true, FenetreF.this.getList());
 					Robot robot = cr.afficherRobot();
-					Class<?>[] interf = this.getList().get(0).getInterfaces();
+					Class<?>[] interf = FenetreF.this.getList().get(0).getInterfaces();
 					String nominter = interf[0].getName();
 					ArrayList<IRobot> list = cr.getListRobots();
 					synchronized (listRobots) {
@@ -103,19 +106,11 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 
 		});
 		bouton2.addActionListener(new ActionListener() {
-			public List<Class> getList() throws ClassNotFoundException {
-				File fichier = new File("");
-				String chemin = fichier.getAbsolutePath().replaceAll("Moteur",
-						"Plugin" + File.separator + "target" + File.separator + "classes");
-				File f = new File(chemin);
-				Repository rep = new Repository(f);
-				List l = rep.load();
-				return l;
-			}
+			
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					ConfigurationRobot cr = new ConfigurationRobot(null, "Configurer votre Robot", true, this.getList(),FenetreF.this);
+					ConfigurationRobot cr = new ConfigurationRobot(null, "Configurer votre Robot", true, FenetreF.this.getList(),FenetreF.this);
 					Robot robot = cr.afficherRobot();
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block

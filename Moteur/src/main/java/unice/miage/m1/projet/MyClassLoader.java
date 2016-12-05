@@ -51,7 +51,7 @@ public class MyClassLoader extends SecureClassLoader implements Serializable{
 //
 //	public static void main(String[] args) throws ClassNotFoundException {
 //		MyClassLoader mcl = new MyClassLoader();
-//		mcl.path.add(new File("/home/deptinfo/workspace/Chenille/bin/"));
-//		System.out.println(mcl.loadClass("Ellipse"));
+//		mcl.path.add(new File("/home/deptinfo/Documents/workspacePA/Projet-PA-RobotWAr/Plugin/target/classes"));
+//		System.out.println(mcl.loadClass("unice.miage.m1.projet.DeplacementLineaire"));
 //	}
 }

@@ -37,7 +37,7 @@ public class AffichageRobotCercle implements IPluginGraphique, Serializable  {
 		// Affichage de la barre de vie
 
 		g.drawRect((int) (p.getX() - 20 / 2), (int) (p.getY() + 20 / 2 + 20), (int) 20, 5);
-		double barWidth = 18;
+		double barWidth = 20;
 		double barToFill = (barWidth / 100) * r.getVie();
 		;
 		g.fillRect((int) (p.getX() - 20 / 2 + 1), (int) (p.getY() + 20 / 2 + 1 + 20), (int) barToFill, 3);

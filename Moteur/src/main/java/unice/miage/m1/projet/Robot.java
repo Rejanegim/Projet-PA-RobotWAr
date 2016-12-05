@@ -152,7 +152,6 @@ public class Robot implements IRobot, Serializable {
 	}
 
 	public void deplacement() {
-		// position = pluginDeplacement.deplacement(this);
 		if (pluginDeplacement != null) {
 			position = pluginDeplacement.deplacement(this, vitesse);
 		}
