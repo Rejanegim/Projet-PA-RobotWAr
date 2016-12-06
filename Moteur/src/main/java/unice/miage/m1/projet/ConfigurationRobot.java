@@ -88,7 +88,7 @@ public class ConfigurationRobot extends JDialog implements Serializable {
 		JPanel choixGraphisme = new JPanel();
 		choixGraphisme.setBackground(Color.white);
 		choixGraphisme.setPreferredSize(new Dimension(440, 100));
-		choixGraphisme.setBorder(BorderFactory.createTitledBorder("Déplacement du robot"));
+		choixGraphisme.setBorder(BorderFactory.createTitledBorder("Apparence du robot"));
 		draw = new JComboBox();
 		for (int i = 0; i < plugins.size(); i++) {
 			Class<?>[] interd = plugins.get(i).getInterfaces();
@@ -98,7 +98,7 @@ public class ConfigurationRobot extends JDialog implements Serializable {
 				}
 			}
 		}
-		graphique = new JLabel("Deplacement : ");
+		graphique = new JLabel("Affichage: ");
 		choixGraphisme.add(graphique);
 		choixGraphisme.add(draw);
 

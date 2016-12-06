@@ -74,15 +74,6 @@ public class Repository implements  Serializable {
 		return (List<Class<?>>) liste;
 	}
 
-//	public static void main(String[] args) throws ClassNotFoundException {
-//			File fichier = new File("") ;
-//			String chemin= fichier.getAbsolutePath();
-//			chemin = chemin.replaceAll("Moteur", "Plugin"+File.separator+"target"+File.separator+"classes");
-////		File f = new File(
-////				"/home/deptinfo/Documents/workspacePA/Projet-PA-RobotWAr/Plugin/target/classes");
-//		File f = new File(chemin);
-//		Repository rep = new Repository(f);
-//		rep.load();
-//	}
+
 
 }

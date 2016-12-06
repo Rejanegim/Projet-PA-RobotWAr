@@ -82,7 +82,7 @@ public class Moteur implements Serializable {
 	 * 
 	 */
 	// Lancement du jeu
-	private void gestionDesTours(Graphics g) {
+	public void gestionDesTours(Graphics g) {
 		while (true) {
 
 			this.listRobots = fenetre.getListRobots();
@@ -115,12 +115,12 @@ public class Moteur implements Serializable {
 
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
-			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		Moteur moteur = new Moteur();
-		moteur.sauvegarde();
-		moteur.fenetre.setVisible(true);
-		Graphics g = moteur.fenetre.getGraphics();
-		moteur.gestionDesTours(g);
-	}
+//	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
+//			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+//		Moteur moteur = new Moteur();
+//		moteur.sauvegarde();
+//		moteur.fenetre.setVisible(true);
+//		Graphics g = moteur.fenetre.getGraphics();
+//		moteur.gestionDesTours(g);
+//	}
 }
