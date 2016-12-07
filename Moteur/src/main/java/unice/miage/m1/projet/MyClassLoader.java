@@ -2,10 +2,13 @@ package unice.miage.m1.projet;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.security.SecureClassLoader;
 import java.util.ArrayList;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 public class MyClassLoader extends SecureClassLoader implements Serializable{
 	/**
@@ -35,6 +38,16 @@ public class MyClassLoader extends SecureClassLoader implements Serializable{
 			if (path.get(i).isDirectory()) {
 				File fi = new File(path.get(i), nameFile);// obtenir le chemin//										// absolue
 				byt = Files.readAllBytes(fi.toPath());
+			} else {
+				/////pour charger les zip et les jar
+				ZipFile zip = new ZipFile(path.get(i).getAbsolutePath());
+				ZipEntry entry = zip.getEntry(name);
+				if (entry == null)
+					continue;
+				InputStream is = zip.getInputStream(entry);
+				byt = new byte[(int) entry.getSize()];
+				is.read(byt);
+				return byt;
 			}
 		}
 

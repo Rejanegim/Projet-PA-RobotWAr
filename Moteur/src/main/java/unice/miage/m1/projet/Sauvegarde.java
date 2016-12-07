@@ -95,6 +95,7 @@ public class Sauvegarde implements Serializable {
 					oos.writeObject(listeRobots.get(i).getPluginDeplacement().getClass().getName());
 					oos.writeObject(listeRobots.get(i).getCouleur());
 					oos.writeObject(listeRobots.get(i).getPosition());
+					oos.writeObject(listeRobots.get(i).getVie());
 				}
 				oos.flush();
 			} catch (final java.io.IOException e) {
@@ -222,9 +223,11 @@ public class Sauvegarde implements Serializable {
 					}
 					Color color = (Color) ois.readObject();
 					Point position = (Point) ois.readObject();
+					int vie =  (Integer) ois.readObject();
 						Robot robot = new Robot(move, draw, kick);
 						robot.setPosition(position);
 						robot.setCouleur(color);
+						robot.setVie(vie);
 						robot.paint(jeu.getFenetre().getGraphics());
 						robot.deplacement();
 						robot.attaque(jeu.getFenetre().getListRobots());
