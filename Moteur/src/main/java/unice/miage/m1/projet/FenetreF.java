@@ -19,7 +19,6 @@ import javax.swing.JPanel;
 
 public class FenetreF extends JFrame implements IFenetre, Serializable {
 
-	
 	/**
 	 * 
 	 */
@@ -38,8 +37,7 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 			}
 		}
 	};
-	
-	
+
 	public List<Class> getList() throws ClassNotFoundException {
 		File fichier = new File("");
 		String chemin = fichier.getAbsolutePath().replaceAll("Moteur",
@@ -49,12 +47,10 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 		List l = rep.load();
 		return l;
 	}
-	
-	
+
 	/**
-	 * Contructeur de FenetreF.
-	 * Met en place tous les éléments de
-	 * la Fenetre du jeu.
+	 * Contructeur de FenetreF. Met en place tous les éléments de la Fenetre du
+	 * jeu.
 	 */
 	public FenetreF() {
 		this.setTitle("RobotWar");
@@ -72,19 +68,17 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 		panel.setBackground(Color.white);
 		this.getContentPane().add(panel, BorderLayout.CENTER);
 		JPanel control = new JPanel();
-		control.setPreferredSize(new Dimension(200,300));
+		control.setPreferredSize(new Dimension(200, 300));
 		control.add(bouton4);
 		control.add(bouton);
-	    control.add(bouton2);
+		control.add(bouton2);
 		control.add(bouton1);
-	    control.add(bouton3);
-	    this.getContentPane().add(control, BorderLayout.NORTH);
+		control.add(bouton3);
+		this.getContentPane().add(control, BorderLayout.NORTH);
 		this.pack();
-		
-		
+
 		bouton.addActionListener(new ActionListener() {
 
-		
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -106,11 +100,12 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 
 		});
 		bouton2.addActionListener(new ActionListener() {
-			
+
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					ConfigurationRobot cr = new ConfigurationRobot(null, "Configurer votre Robot", true, FenetreF.this.getList(),FenetreF.this);
+					ConfigurationRobot cr = new ConfigurationRobot(null, "Configurer votre Robot", true,
+							FenetreF.this.getList(), FenetreF.this);
 					Robot robot = cr.afficherRobot();
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -120,11 +115,11 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 
 		});
 		bouton3.addActionListener(new ActionListener() {
-	
+
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
-			AjouterPlugin ap = new AjouterPlugin(null, "Ajouter un Plugin",true);
-			Robot robot = ap.afficher();
+				AjouterPlugin ap = new AjouterPlugin(null, "Ajouter un Plugin", true);
+				Robot robot = ap.afficher();
 			}
 
 		});
@@ -155,6 +150,4 @@ public class FenetreF extends JFrame implements IFenetre, Serializable {
 		this.bouton4 = bouton4;
 	}
 
-	
-	
 }

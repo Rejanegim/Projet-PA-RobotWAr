@@ -11,20 +11,19 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Repository implements  Serializable {
+public class Repository implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -2807021015360468260L;
 
-	private File base ;
+	private File base;
 
 	public ArrayList<String> tableau = new ArrayList<String>();
-	
+
 	/**
-	 * Classe interne permettant de trouver 
-	 * tous les fichiers se terminant par
+	 * Classe interne permettant de trouver tous les fichiers se terminant par
 	 * ".class" dans un repertoire donné.
 	 * 
 	 */
@@ -33,13 +32,14 @@ public class Repository implements  Serializable {
 		public FileVisitResult visitFile(Object file, BasicFileAttributes attrs) throws IOException {
 			String s = file.toString();
 			if (s.endsWith(".class")) {
-				tableau.add(s.replace(base.getAbsolutePath() +File.separator, "").replaceAll(File.separator, "."));
+				tableau.add(s.replace(base.getAbsolutePath() + File.separator, "").replaceAll(File.separator, "."));
 			}
-//			 System.out.println(tableau.toString());
+			// System.out.println(tableau.toString());
 			return super.visitFile(file, attrs);
 		}
 
 	}
+
 	/**
 	 * Constructeur de Repository
 	 * 
@@ -54,10 +54,10 @@ public class Repository implements  Serializable {
 			e.printStackTrace();
 		}
 	}
+
 	/**
-	 * Méthode permettant le
-	 * chargement de tous les fichier 
-	 * ".class" du répertoire.
+	 * Méthode permettant le chargement de tous les fichier ".class" du
+	 * répertoire.
 	 */
 	public List<Class<?>> load() throws ClassNotFoundException {
 		ArrayList<Class<?>> liste = new ArrayList<Class<?>>(tableau.size());
@@ -73,7 +73,5 @@ public class Repository implements  Serializable {
 
 		return (List<Class<?>>) liste;
 	}
-
-
 
 }

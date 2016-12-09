@@ -7,5 +7,3 @@ public interface IPluginDeplacement {
 	public Point deplacement(IRobot r, int v);
 
 }
-
-

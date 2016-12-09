@@ -3,14 +3,14 @@ package unice.miage.m1.projet;
 import java.awt.Point;
 import java.io.Serializable;
 
-public class DeplacementVertical implements IPluginDeplacement, Serializable  {
+public class DeplacementVertical implements IPluginDeplacement, Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 3144661676662879061L;
 	// le cap doit être soit 90 soit -90 pour un déplacement vertical
-	int angle = 90 ;
+	int angle = 90;
 
 	/**
 	 * Constructeur de la classe
@@ -37,9 +37,10 @@ public class DeplacementVertical implements IPluginDeplacement, Serializable  {
 		Point p = r.getPosition();
 		if (this.auBord(r)) {
 			this.angle = -angle;
-			r.setCap(angle);;	
-//			float capEnRadian2 = r.getCap() * (float) (Math.PI / 180);
-//		p.y += 70 * (float) Math.sin(capEnRadian2);
+			r.setCap(angle);
+			;
+			// float capEnRadian2 = r.getCap() * (float) (Math.PI / 180);
+			// p.y += 70 * (float) Math.sin(capEnRadian2);
 		}
 		float capEnRadian = r.getCap() * (float) (Math.PI / 180);
 		p.y += vitesse * (float) Math.sin(capEnRadian);

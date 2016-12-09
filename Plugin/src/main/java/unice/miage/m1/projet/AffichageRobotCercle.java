@@ -5,10 +5,8 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.io.Serializable;
 
-public class AffichageRobotCercle implements IPluginGraphique, Serializable  {
-	/**
-	 * 
-	 */
+public class AffichageRobotCercle implements IPluginGraphique, Serializable {
+
 	private static final long serialVersionUID = 2979470404036378632L;
 
 	/**
@@ -41,9 +39,9 @@ public class AffichageRobotCercle implements IPluginGraphique, Serializable  {
 		double barToFill = (barWidth / 100) * r.getVie();
 		;
 		g.fillRect((int) (p.getX() - 20 / 2 + 1), (int) (p.getY() + 20 / 2 + 1 + 20), (int) barToFill, 3);
-		//Niveau de vie en nombre
-		String life =  Integer.toString(r.getVie()) ;
-		g.drawString(life,(int) (p.getX() - 20 / 2), (int) (p.getY() + 20 / 2 + 20));
+		// Niveau de vie en nombre
+		String life = Integer.toString(r.getVie());
+		g.drawString(life, (int) (p.getX() - 20 / 2), (int) (p.getY() + 20 / 2 + 20));
 
 	}
 

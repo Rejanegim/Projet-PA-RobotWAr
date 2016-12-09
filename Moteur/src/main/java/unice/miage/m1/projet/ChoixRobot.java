@@ -27,7 +27,7 @@ public class ChoixRobot extends JDialog implements Serializable {
 	private JLabel graphique, deplacement, attaque;
 	private JComboBox mouve, attack, draw;
 	private IPluginDeplacement pluginDeplacement;
-	private IPluginGraphique pluginsgraphique ;
+	private IPluginGraphique pluginsgraphique;
 	private IPluginAttaque pluginattaque;
 
 	/**
@@ -82,8 +82,7 @@ public class ChoixRobot extends JDialog implements Serializable {
 		graphique = new JLabel("Affichage : ");
 		choixGraphisme.add(graphique);
 		choixGraphisme.add(draw);
-		
-		
+
 		// Le déplacement
 		JPanel choixDeplacement = new JPanel();
 		choixDeplacement.setBackground(Color.white);
@@ -143,7 +142,7 @@ public class ChoixRobot extends JDialog implements Serializable {
 						try {
 							o = cons.newInstance();
 							// invoke
-							pluginsgraphique  = (IPluginGraphique) o;
+							pluginsgraphique = (IPluginGraphique) o;
 						} catch (InstantiationException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -222,9 +221,8 @@ public class ChoixRobot extends JDialog implements Serializable {
 					listRobots.add(rb);
 				}
 				setVisible(false);
-				
-			}
 
+			}
 
 		});
 

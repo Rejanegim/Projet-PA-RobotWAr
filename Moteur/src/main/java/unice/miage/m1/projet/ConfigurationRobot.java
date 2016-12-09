@@ -76,7 +76,7 @@ public class ConfigurationRobot extends JDialog implements Serializable {
 		rob = new JComboBox();
 
 		for (int i = 0; i < listRobots.size(); i++) {
-			String str = Integer.toString(i+1);
+			String str = Integer.toString(i + 1);
 			rob.addItem(str);
 		}
 
@@ -140,7 +140,7 @@ public class ConfigurationRobot extends JDialog implements Serializable {
 
 		JPanel content = new JPanel();
 		content.setBackground(Color.white);
-		
+
 		content.add(choixRobot);
 		content.add(choixGraphisme);
 		content.add(choixDeplacement);
@@ -239,18 +239,18 @@ public class ConfigurationRobot extends JDialog implements Serializable {
 					}
 				}
 				String str1 = (String) rob.getSelectedItem();
-				int int1 =  Integer.parseInt(str1)-1 ;
-				IRobot robot1= listRobots.get(int1);
+				int int1 = Integer.parseInt(str1) - 1;
+				IRobot robot1 = listRobots.get(int1);
 				robot1.setPluginattaque(pluginattaque);
 				robot1.setPluginDeplacement(pluginDeplacement);
 				robot1.setPluginGraphique(pluginsgraphique);
 
-//				IRobot rb = new Robot(pluginDeplacement, pluginsgraphique, pluginattaque);
-//				synchronized (listRobots) {
-//					listRobots.add(rb);
-//				}
-		
-				
+				// IRobot rb = new Robot(pluginDeplacement, pluginsgraphique,
+				// pluginattaque);
+				// synchronized (listRobots) {
+				// listRobots.add(rb);
+				// }
+
 				setVisible(false);
 
 			}

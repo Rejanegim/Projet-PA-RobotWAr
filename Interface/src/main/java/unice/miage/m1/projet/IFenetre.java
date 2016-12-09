@@ -4,5 +4,5 @@ import java.util.ArrayList;
 
 public interface IFenetre {
 
-	public ArrayList<IRobot> getListRobots() ;
+	public ArrayList<IRobot> getListRobots();
 }

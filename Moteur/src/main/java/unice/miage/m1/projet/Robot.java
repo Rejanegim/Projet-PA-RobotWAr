@@ -144,7 +144,7 @@ public class Robot implements IRobot, Serializable {
 
 	public void paint(Graphics g) {
 		if (pluginsgraphique != null) {
-			
+
 			// pour que le robot se supprime lorsqu'il n'a plus de vie mais
 			if (vie > 0)
 				this.pluginsgraphique.paint(g, this);

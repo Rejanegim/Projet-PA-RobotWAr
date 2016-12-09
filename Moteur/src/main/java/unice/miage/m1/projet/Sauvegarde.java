@@ -223,16 +223,16 @@ public class Sauvegarde implements Serializable {
 					}
 					Color color = (Color) ois.readObject();
 					Point position = (Point) ois.readObject();
-					int vie =  (Integer) ois.readObject();
-						Robot robot = new Robot(move, draw, kick);
-						robot.setPosition(position);
-						robot.setCouleur(color);
-						robot.setVie(vie);
-						robot.paint(jeu.getFenetre().getGraphics());
-						robot.deplacement();
-						robot.attaque(jeu.getFenetre().getListRobots());
-						localist.add(robot);
-	
+					int vie = (Integer) ois.readObject();
+					Robot robot = new Robot(move, draw, kick);
+					robot.setPosition(position);
+					robot.setCouleur(color);
+					robot.setVie(vie);
+					robot.paint(jeu.getFenetre().getGraphics());
+					robot.deplacement();
+					robot.attaque(jeu.getFenetre().getListRobots());
+					localist.add(robot);
+
 				}
 
 				jeu.getFenetre().setListeRobots(localist);

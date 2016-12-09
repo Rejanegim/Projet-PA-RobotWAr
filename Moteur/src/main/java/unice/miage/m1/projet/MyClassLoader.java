@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class MyClassLoader extends SecureClassLoader implements Serializable{
+public class MyClassLoader extends SecureClassLoader implements Serializable {
 	/**
 	 * 
 	 */
@@ -36,10 +36,11 @@ public class MyClassLoader extends SecureClassLoader implements Serializable{
 		byte[] byt = null;
 		for (int i = 0; i < path.size(); i++) {
 			if (path.get(i).isDirectory()) {
-				File fi = new File(path.get(i), nameFile);// obtenir le chemin//										// absolue
+				File fi = new File(path.get(i), nameFile);// obtenir le chemin//
+															// // absolue
 				byt = Files.readAllBytes(fi.toPath());
 			} else {
-				/////pour charger les zip et les jar
+				///// pour charger les zip et les jar
 				ZipFile zip = new ZipFile(path.get(i).getAbsolutePath());
 				ZipEntry entry = zip.getEntry(name);
 				if (entry == null)

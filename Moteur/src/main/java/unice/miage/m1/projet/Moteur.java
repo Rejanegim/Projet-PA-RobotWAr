@@ -25,26 +25,26 @@ public class Moteur implements Serializable {
 
 	/** Bouton de sauvegarde */
 	private JButton buttonsave;
-	
-	/** Bouton  pour reprendre une partie */
-	private JButton buttonload; 
-	
+
+	/** Bouton pour reprendre une partie */
+	private JButton buttonload;
+
 	public void sauvegarde() {
 		buttonsave.addActionListener(new ActionListener() {
-	
+
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
-			Sauvegarde save = new Sauvegarde(Moteur.this);
-			save.save(); 
+				Sauvegarde save = new Sauvegarde(Moteur.this);
+				save.save();
 			}
 		});
-		
+
 		buttonload.addActionListener(new ActionListener() {
-			
+
 			// Definit l'action du bouton
 			public void actionPerformed(ActionEvent arg0) {
-			Sauvegarde load = new Sauvegarde(Moteur.this);
-			load.load(); 
+				Sauvegarde load = new Sauvegarde(Moteur.this);
+				load.load();
 			}
 		});
 	}
@@ -58,7 +58,7 @@ public class Moteur implements Serializable {
 		this.fenetre = new FenetreF();
 		this.listRobots = fenetre.getListRobots();
 		buttonsave = fenetre.getBouton1();
-		buttonload = fenetre.getBouton4() ; 
+		buttonload = fenetre.getBouton4();
 	}
 
 	public ArrayList<IRobot> getListRobots() {
@@ -115,12 +115,14 @@ public class Moteur implements Serializable {
 
 	}
 
-//	public static void main(String[] args) throws ClassNotFoundException, InstantiationException,
-//			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-//		Moteur moteur = new Moteur();
-//		moteur.sauvegarde();
-//		moteur.fenetre.setVisible(true);
-//		Graphics g = moteur.fenetre.getGraphics();
-//		moteur.gestionDesTours(g);
-//	}
+	// public static void main(String[] args) throws ClassNotFoundException,
+	// InstantiationException,
+	// IllegalAccessException, IllegalArgumentException,
+	// InvocationTargetException {
+	// Moteur moteur = new Moteur();
+	// moteur.sauvegarde();
+	// moteur.fenetre.setVisible(true);
+	// Graphics g = moteur.fenetre.getGraphics();
+	// moteur.gestionDesTours(g);
+	// }
 }
